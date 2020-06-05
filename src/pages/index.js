@@ -6,7 +6,6 @@ export default function App() {
   return (
     <React.StrictMode>
       <div
-        className="center-contents"
         css={css`
           margin: 0 auto;
           text-align: center;
@@ -25,6 +24,11 @@ export default function App() {
           />
         </Helmet>
         <h1>hi. 🦁</h1>
+        <header>
+          <nav></nav>
+        </header>
+        <main></main>
+        <footer></footer>
       </div>
     </React.StrictMode>
   );
