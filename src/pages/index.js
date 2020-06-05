@@ -21,6 +21,7 @@ export default function App() {
           <title>Toucan Recipes</title>
         </Helmet>
         <h1>hi. 🦁</h1>
+        <h2>Hello World</h2>
       </div>
     </React.StrictMode>
   );
