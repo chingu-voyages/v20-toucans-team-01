@@ -1,7 +1,7 @@
 [build]
   publish = "public"
   command = "npm run build"
-  functions = "lambda"
+# functions = "lambda"
 [build.environment]
   NODE_VERSION = "14"
 [[plugins]]
