@@ -9,7 +9,7 @@
   ],
   "rules": {
     "react/prop-types": 0,
-		"react-hooks/rules-of-hooks": "error",
+    "react-hooks/rules-of-hooks": "error",
     "no-console": "warn",
     "react-hooks/exhaustive-deps": 1
   },
