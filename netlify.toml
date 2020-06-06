@@ -4,3 +4,5 @@
   functions = "lambda"
 [build.environment]
   NODE_VERSION = "14"
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"
