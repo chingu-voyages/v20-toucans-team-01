@@ -35,7 +35,17 @@ export default function App() {
             </Link>
           </nav>
         </header>
-        <main></main>
+        <main>
+          <ul
+            css={css`
+              list-style: none;
+            `}
+          >
+            <li>
+              <a href="#">Recipe Item</a>
+            </li>
+          </ul>
+        </main>
         <footer></footer>
       </div>
     </React.StrictMode>
