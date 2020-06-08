@@ -42,6 +42,7 @@ export default function App() {
             `}
           >
             <li>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#">Recipe Item</a>
             </li>
           </ul>
