@@ -46,7 +46,12 @@ export default function App() {
             </li>
           </ul>
         </main>
-        <footer></footer>
+        <footer>
+          2020{" "}
+          <a href="https://github.com/chingu-voyages/v20-toucans-team-01">
+            Voyage 20 Toucans Team 01
+          </a>
+        </footer>
       </div>
     </React.StrictMode>
   );
