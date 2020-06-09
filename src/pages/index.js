@@ -46,6 +46,7 @@ export default function App() {
           <ul
             css={css`
               list-style: none;
+              padding-left: 0;
             `}
           >
             <li>
