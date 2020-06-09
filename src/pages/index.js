@@ -36,6 +36,13 @@ export default function App() {
           </nav>
         </header>
         <main>
+          <img
+            css={css`
+              border-radius: 10%;
+            `}
+            src="http://placecorgi.com/300/180"
+            alt="hero corgi"
+          />
           <ul
             css={css`
               list-style: none;
