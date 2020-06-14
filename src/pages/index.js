@@ -33,9 +33,11 @@ export default function App() {
             <Link className="nav-brand" to="/">
               Toucan
             </Link>
+            {/* TODO about page */}
           </nav>
         </header>
         <main>
+          {/* placeholder hero image */}
           <img
             css={css`
               border-radius: 10%;
@@ -50,6 +52,7 @@ export default function App() {
             `}
           >
             <li>
+              {/* reserved for dynamic recipe sitemap */}
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#">Recipe Item</a>
             </li>
