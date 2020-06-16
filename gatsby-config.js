@@ -6,7 +6,7 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-mdx`,
     {
-      resolve: "gatsby-source-filesytem",
+      resolve: "gatsby-source-filesystem",
       options: {
         name: "recipes",
         path: "recipes",
