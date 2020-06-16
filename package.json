@@ -31,6 +31,7 @@
     "gatsby-plugin-mdx": "^1.2.15",
     "gatsby-plugin-netlify": "^2.3.5",
     "gatsby-plugin-react-helmet": "^3.3.4",
+    "gatsby-source-filesystem": "^2.3.11",
     "idb-keyval": "^3.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

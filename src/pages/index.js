@@ -2,8 +2,11 @@ import React from "react";
 import { css } from "@emotion/core";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
+import useRecipes from "../hooks/use-recipes";
+import RecipePreview from "../components/recipe-preview";
 
 export default function App() {
+  const recipes = useRecipes();
   return (
     <React.StrictMode>
       <div
@@ -33,9 +36,11 @@ export default function App() {
             <Link className="nav-brand" to="/">
               Toucan
             </Link>
+            {/* TODO about page */}
           </nav>
         </header>
         <main>
+          {/* placeholder hero image */}
           <img
             css={css`
               border-radius: 10%;
@@ -43,17 +48,9 @@ export default function App() {
             src="http://placecorgi.com/300/180"
             alt="hero corgi"
           />
-          <ul
-            css={css`
-              list-style: none;
-              padding-left: 0;
-            `}
-          >
-            <li>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#">Recipe Item</a>
-            </li>
-          </ul>
+          {recipes.map((recipe) => (
+            <RecipePreview key={recipe.slug} recipe={recipe} />
+          ))}
         </main>
         <footer>
           2020{" "}
