@@ -18,17 +18,16 @@ export const query = graphql`
 `;
 
 export default function RecipeTemplate({ data: { mdx: recipe } }) {
+  var { title, author, time, servings } = recipe.frontmatter;
   return (
     <>
       <Helmet>
-        <title>{recipe.frontmatter.title} | Toucan Recipes</title>
+        <title>{title} | Toucan Recipes</title>
       </Helmet>
-      <h1>{recipe.frontmatter.title}</h1>
-      <p>by {recipe.frontmatter.author}</p>
-      <p>Prep Time: {recipe.frontmatter.time}</p>
-      {recipe.frontmatter.servings && (
-        <p>Serves {recipe.frontmatter.servings} people</p>
-      )}
+      <h1>{title}</h1>
+      <p>by {author}</p>
+      <p>Prep Time: {time}</p>
+      {servings && <p>Serves {servings} people</p>}
 
       <MDXRenderer>{recipe.body}</MDXRenderer>
       <Link to="/">&larr; back to home</Link>
