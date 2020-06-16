@@ -9,8 +9,6 @@ export default function useRecipes() {
             title
             slug
             author
-            time
-            servings
           }
           excerpt
         }
@@ -22,8 +20,6 @@ export default function useRecipes() {
     title: recipe.frontmatter.title,
     author: recipe.frontmatter.author,
     slug: recipe.frontmatter.slug,
-    time: recipe.frontmatter.time,
-    servings: recipe.frontmatter.servings,
     excerpt: recipe.excerpt,
   }));
 }
