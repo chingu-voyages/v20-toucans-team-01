@@ -5,5 +5,12 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-mdx`,
+    {
+      resolve: "gatsby-source-filesytem",
+      options: {
+        name: "recipes",
+        path: "recipes",
+      },
+    },
   ],
 };
