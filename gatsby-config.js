@@ -4,5 +4,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-mdx`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "recipes",
+        path: "recipes",
+      },
+    },
   ],
 };
