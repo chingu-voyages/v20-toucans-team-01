@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,700&display=swap");
-/* CSS boilerplate */
+/* Unopinionated CSS global boilerplate */
+/* layout.js contains more opinionated page styles */
 html {
   box-sizing: border-box;
 }
@@ -13,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
 }
-/* Global Styles */
+/* Global Font */
 body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
