@@ -9,6 +9,7 @@ export default function useRecipes() {
             title
             slug
             author
+            image
           }
           excerpt
         }
@@ -20,6 +21,7 @@ export default function useRecipes() {
     title: recipe.frontmatter.title,
     author: recipe.frontmatter.author,
     slug: recipe.frontmatter.slug,
+    image: recipe.frontmatter.image,
     excerpt: recipe.excerpt,
   }));
 }
