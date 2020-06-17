@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
+import Layout from "../styles/layout";
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,9 +21,9 @@ export const query = graphql`
 export default function RecipeTemplate({ data: { mdx: recipe } }) {
   var { title, author, time, servings } = recipe.frontmatter;
   return (
-    <>
+    <Layout>
       <Helmet>
-        <title>{title} | Toucan Recipes</title>
+        <title>Cook {title} — Toucan Recipes</title>
       </Helmet>
       <h1>{title}</h1>
       <p>by {author}</p>
@@ -31,6 +32,6 @@ export default function RecipeTemplate({ data: { mdx: recipe } }) {
 
       <MDXRenderer>{recipe.body}</MDXRenderer>
       <Link to="/">&larr; back to home</Link>
-    </>
+    </Layout>
   );
 }

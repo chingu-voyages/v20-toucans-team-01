@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
+import Layout from "../styles/layout";
 
 export default function App() {
   const recipes = useRecipes();
@@ -39,7 +40,7 @@ export default function App() {
             {/* TODO about page */}
           </nav>
         </header>
-        <main>
+        <Layout>
           {/* placeholder hero image */}
           <img
             css={css`
@@ -51,7 +52,7 @@ export default function App() {
           {recipes.map((recipe) => (
             <RecipePreview key={recipe.slug} recipe={recipe} />
           ))}
-        </main>
+        </Layout>
         <footer>
           2020{" "}
           <a href="https://github.com/chingu-voyages/v20-toucans-team-01">
