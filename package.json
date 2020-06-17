@@ -26,6 +26,7 @@
     "@mdx-js/mdx": "^1.6.5",
     "@mdx-js/react": "^1.6.5",
     "@types/react": "^16.9.36",
+    "bootstrap": "^4.5.0",
     "gatsby": "^2.23.3",
     "gatsby-plugin-emotion": "^4.3.4",
     "gatsby-plugin-mdx": "^1.2.15",
@@ -34,6 +35,7 @@
     "gatsby-source-filesystem": "^2.3.11",
     "idb-keyval": "^3.2.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0"
   },

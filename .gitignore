@@ -7,3 +7,5 @@ public/
 .DS_Store
 coverage/
 .vscode/
+package-lock.json
+package.json
