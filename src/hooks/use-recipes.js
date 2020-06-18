@@ -17,11 +17,13 @@ export default function useRecipes() {
     }
   `);
 
-  return data.allMdx.nodes.map((recipe) => ({
-    title: recipe.frontmatter.title,
-    author: recipe.frontmatter.author,
-    slug: recipe.frontmatter.slug,
-    image: recipe.frontmatter.image,
-    excerpt: recipe.excerpt,
-  }));
+  return data.allMdx.nodes.map(
+    ({ frontmatter: { title, author, slug, image }, excerpt }) => ({
+      title,
+      author,
+      slug,
+      image,
+      excerpt,
+    })
+  );
 }
