@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
+import { css } from "@emotion/core";
 
 export default function RecipePreview({ recipe: { slug, title, image } }) {
   return (
-    <article>
+    <article className="col-3 col-md-3">
       <Link to={slug}>
         <img
+          css={css`
+            border-radius: 10%;
+          `}
           width="200"
           height="200"
           src={
