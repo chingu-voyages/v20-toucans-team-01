@@ -7,6 +7,7 @@ import RecipePreview from "../components/recipe-preview";
 import Layout from "../styles/layout";
 import "../styles/bootstrap.min.css";
 import "../styles/global.css";
+import Difficulty from "../components/Difficulty"
 
 export default function App() {
   const recipes = useRecipes();
@@ -38,7 +39,9 @@ export default function App() {
         {/* Main page starts here */}
 
         {/* Nav Bar starts here */}
+        
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Difficulty />
           <button
             className="navbar-toggler"
             type="button"
