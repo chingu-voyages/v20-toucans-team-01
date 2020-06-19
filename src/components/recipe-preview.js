@@ -4,7 +4,7 @@ import { css } from "@emotion/core";
 
 export default function RecipePreview({ recipe: { slug, title, image } }) {
   return (
-    <article className="col-3 col-md-3">
+    <article className="col-lg-3 col-md-4 col-sm-6">
       <Link to={slug}>
         <img
           css={css`
