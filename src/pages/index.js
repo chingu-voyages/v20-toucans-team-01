@@ -8,6 +8,7 @@ import Layout from "../styles/layout";
 import "../styles/bootstrap.min.css";
 import "../styles/global.css";
 import Difficulty from "../components/Difficulty";
+import Mealtype from "../components/Mealtype";
 
 export default function App() {
   const recipes = useRecipes();
@@ -42,6 +43,7 @@ export default function App() {
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Difficulty difficulty='1' />
+          <Mealtype meal='1' />
           <button
             className="navbar-toggler"
             type="button"
