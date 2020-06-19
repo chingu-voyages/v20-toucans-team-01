@@ -7,7 +7,7 @@ import RecipePreview from "../components/recipe-preview";
 import Layout from "../styles/layout";
 import "../styles/bootstrap.min.css";
 import "../styles/global.css";
-import Difficulty from "../components/Difficulty"
+import Difficulty from "../components/Difficulty";
 
 export default function App() {
   const recipes = useRecipes();
@@ -39,9 +39,9 @@ export default function App() {
         {/* Main page starts here */}
 
         {/* Nav Bar starts here */}
-        
+
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Difficulty />
+          <Difficulty />
           <button
             className="navbar-toggler"
             type="button"
@@ -116,46 +116,19 @@ export default function App() {
             <h2 className="title">Categories</h2>
           </div>
           <div className="row">
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
+            {recipes.map((recipe) => (
+              <RecipePreview key={recipe.slug} recipe={recipe} />
+            ))}
           </div>
           <div className="row">
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
+            {recipes.map((recipe) => (
+              <RecipePreview key={recipe.slug} recipe={recipe} />
+            ))}
           </div>
           <div className="row">
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
-            <div className="col-3 col-md-3">
-              <img src="https://via.placeholder.com/250" alt=""></img>{" "}
-            </div>
+            {recipes.map((recipe) => (
+              <RecipePreview key={recipe.slug} recipe={recipe} />
+            ))}
           </div>
         </div>
         {/* Second section ends here */}
