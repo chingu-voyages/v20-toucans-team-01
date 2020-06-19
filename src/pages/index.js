@@ -41,7 +41,7 @@ export default function App() {
         {/* Nav Bar starts here */}
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Difficulty />
+          <Difficulty difficulty='1' />
           <button
             className="navbar-toggler"
             type="button"
