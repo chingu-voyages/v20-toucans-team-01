@@ -13,7 +13,7 @@ export default function RecipePreview({ recipe: { slug, title, image } }) {
           width="200"
           height="200"
           src={
-            image ||
+            image ??
             "https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
           }
           alt={`Cooked ${title}`}
