@@ -27,7 +27,7 @@
     "@mdx-js/react": "^1.6.6",
     "@types/react": "^16.9.38",
     "bootstrap": "^4.5.0",
-    "gatsby": "^2.23.9",
+    "gatsby": "^2.23.10",
     "gatsby-plugin-emotion": "^4.3.5",
     "gatsby-plugin-mdx": "^1.2.17",
     "gatsby-plugin-netlify": "^2.3.6",
