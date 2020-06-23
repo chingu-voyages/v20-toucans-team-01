@@ -3,6 +3,8 @@ import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
 import Layout from "../styles/layout";
+import { MDXProvider } from "@mdx-js/react";
+import RecipeLayout from "../components/recipe-layout";
 
 export const query = graphql`
   query($slug: String!) {
@@ -36,7 +38,9 @@ export default function RecipeTemplate({
       <p>Prep Time: {time}</p>
       {servings && <p>Serves {servings} people</p>}
 
-      <MDXRenderer>{body}</MDXRenderer>
+      <MDXProvider components={{ RecipeLayout }}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
       <Link to="/">&larr; back to home</Link>
     </Layout>
   );
