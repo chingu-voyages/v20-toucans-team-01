@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet";
 import Layout from "../styles/layout";
 import { MDXProvider } from "@mdx-js/react";
 import RecipeLayout from "../components/recipe-layout";
+import Nav from "../components/Nav";
+
 
 export const query = graphql`
   query($slug: String!) {
@@ -29,10 +31,13 @@ export default function RecipeTemplate({
   },
 }) {
   return (
+    <div>
+    <Nav />
     <Layout>
       <Helmet>
         <title>Cook {title} — Toucan Recipes</title>
       </Helmet>
+      
       <h1>{title}</h1>
       <p>by {author}</p>
       <p>Prep Time: {time}</p>
@@ -43,5 +48,6 @@ export default function RecipeTemplate({
       </MDXProvider>
       <Link to="/">&larr; back to home</Link>
     </Layout>
+    </div>
   );
 }
