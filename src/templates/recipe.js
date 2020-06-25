@@ -7,7 +7,6 @@ import { MDXProvider } from "@mdx-js/react";
 import RecipeLayout from "../components/recipe-layout";
 import Nav from "../components/Nav";
 
-
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
@@ -32,22 +31,23 @@ export default function RecipeTemplate({
 }) {
   return (
     <div>
-    <Nav />
-    <Layout>
-      <Helmet>
-        <title>Cook {title} — Toucan Recipes</title>
-      </Helmet>
-      
-      <h1>{title}</h1>
-      <p>by {author}</p>
-      <p>Prep Time: {time}</p>
-      {servings && <p>Serves {servings} people</p>}
+      <Nav />
+      <Layout>
+        <Helmet>
+          <title>Cook {title} — Toucan Recipes</title>
+        </Helmet>
 
-      <MDXProvider components={{ RecipeLayout }}>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
-      <Link to="/">&larr; back to home</Link>
-    </Layout>
+        <h1>{title}</h1>
+        <p>by {author}</p>
+        <p>Prep Time: {time}</p>
+        {servings && <p>Serves {servings} people</p>}
+
+        <MDXProvider components={{ RecipeLayout }}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+
+        <Link to="/">&larr; back to home</Link>
+      </Layout>
     </div>
   );
 }
