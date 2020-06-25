@@ -28,7 +28,7 @@
     "@types/react": "^16.9.41",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.23.11",
-    "gatsby-plugin-emotion": "^4.3.5",
+    "gatsby-plugin-emotion": "^4.3.6",
     "gatsby-plugin-mdx": "^1.2.18",
     "gatsby-plugin-netlify": "^2.3.7",
     "gatsby-plugin-react-helmet": "^3.3.6",
