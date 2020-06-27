@@ -11,6 +11,7 @@ import Difficulty from "../components/Difficulty";
 import Mealtype from "../components/Mealtype";
 import Nav from "../components/Nav";
 import { StylesProvider } from "@material-ui/core/styles";
+import { CSSReset } from "@chakra-ui/core";
 
 export default function App() {
   const recipes = useRecipes();
@@ -40,6 +41,7 @@ export default function App() {
               href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0 100 100"><text y=".9em" font-size="90">🥘</text></svg>'
             />
           </Helmet>
+          <CSSReset />
           {/* Main page starts here */}
 
           {/* Nav Bar starts here */}
