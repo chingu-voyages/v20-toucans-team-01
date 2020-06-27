@@ -19,6 +19,7 @@ export default function App() {
   return (
     <React.StrictMode>
       <StylesProvider injectFirst>
+        <CSSReset />
         <div
           className="App"
           css={css`
