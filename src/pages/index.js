@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "@emotion/core";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import useRecipes from "../hooks/use-recipes";
@@ -10,10 +9,20 @@ import "../styles/global.css";
 import Difficulty from "../components/Difficulty";
 import Mealtype from "../components/Mealtype";
 import Nav from "../components/Nav";
+import {
+  SimpleGrid,
+  useTheme,
+  Flex,
+  Heading,
+  Text,
+  Box,
+} from "@chakra-ui/core";
 
 export default function App() {
   const recipes = useRecipes();
-
+  const theme = useTheme();
+  console.log(theme);
+  console.log(Link);
   return (
     <React.StrictMode>
       <Helmet>
@@ -28,29 +37,37 @@ export default function App() {
           href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0 100 100"><text y=".9em" font-size="90">🥘</text></svg>'
         />
       </Helmet>
-      {/* Main page starts here */}
 
-      {/* Nav Bar starts here */}
       <Nav />
 
-      {/* Nav Bar ends here */}
+      {/* Main page starts here */}
+      <Box as="main">
+        {/* First section starts here*/}
 
-      {/* First section starts here*/}
-
-      <div>
-        <div>
-          <h2>Weelky chief recommendation</h2>
-        </div>
-        <div>
+        <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
+          <Heading as="h2" size="1xl" fontWeight="700">
+            Weekly Chef&apos;s Specials
+          </Heading>
+        </Flex>
+        <SimpleGrid
+          align="center"
+          justify="center"
+          columns={{ xs: "1", md: "2" }}
+          spacing="4"
+        >
           {recipes.map((recipe) => (
             <RecipePreview key={recipe.slug} recipe={recipe} />
           ))}
-        </div>
-      </div>
-      {/* First section ends here */}
+        </SimpleGrid>
+        {/* First section ends here */}
 
-      {/* Second section starts here*/}
-      <div>
+        {/* Second section starts here*/}
+        <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
+          <Heading as="h2" size="1xl" fontWeight="700">
+            Categories
+          </Heading>
+        </Flex>
+        {/* <div>
         <div>
           <h2>Categories</h2>
         </div>
@@ -69,18 +86,19 @@ export default function App() {
             <RecipePreview key={recipe.slug} recipe={recipe} />
           ))}
         </div>
-      </div>
-      {/* Second section ends here */}
+      </div> */}
+        {/* Second section ends here */}
+      </Box>
 
       {/* Footer starts here */}
-      <footer>
-        <div>
+      <Flex as="footer" justify="center" mt={4}>
+        <Text>
           © 2020 Copyright{" "}
           <a href="https://github.com/chingu-voyages/v20-toucans-team-01">
             Voyage 20 Toucans Team 01
           </a>
-        </div>
-      </footer>
+        </Text>
+      </Flex>
       {/* Footer ends here */}
     </React.StrictMode>
   );
