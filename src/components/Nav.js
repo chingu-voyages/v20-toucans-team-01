@@ -11,13 +11,16 @@ import {
   Stack,
   Input,
   Icon,
+  Button,
 } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
 const MenuLink = ({ children }) => (
   <Link as={GatsbyLink} mt={{ base: 4, md: 0 }} mr={6} display="block">
-    {children}
+    <Button variant="link" color="white" variantColor="teal">
+      {children}
+    </Button>
   </Link>
 );
 
@@ -33,7 +36,7 @@ const Nav = () => {
       color="white"
     >
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg">
+        <Heading as="h1" size="lg" fontWeight="700">
           Toucan Recipes
         </Heading>
       </Flex>
