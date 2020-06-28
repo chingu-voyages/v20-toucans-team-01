@@ -45,7 +45,7 @@ export default function App() {
         {/* First section starts here*/}
 
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
-          <Heading as="h2" size="1xl" fontWeight="700">
+          <Heading as="h2" size="xl" fontWeight="700">
             Weekly Chef&apos;s Specials
           </Heading>
         </Flex>
@@ -63,7 +63,7 @@ export default function App() {
 
         {/* Second section starts here*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
-          <Heading as="h2" size="1xl" fontWeight="700">
+          <Heading as="h2" size="xl" fontWeight="700">
             Categories
           </Heading>
         </Flex>
