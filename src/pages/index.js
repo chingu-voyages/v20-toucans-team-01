@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
 import Nav from "../components/Nav";
-import { SimpleGrid, Flex, Heading, Text, Box, Link } from "@chakra-ui/core";
+import { Flex, Heading, Text, Box, Link } from "@chakra-ui/core";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -31,20 +31,15 @@ export default function App() {
       <Box as="main">
         {/* First Section*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
-          <Heading as="h2" size="xl" fontWeight="700">
+          <Heading textAlign="center" as="h2" size="xl" fontWeight="700">
             Weekly Chef&apos;s Specials
           </Heading>
         </Flex>
-        <SimpleGrid
-          align="center"
-          justify="center"
-          columns={{ xs: "1", md: "2" }}
-          spacing="4"
-        >
+        <Flex direction={{ xs: "column", md: "row" }}>
           {recipes.map((recipe) => (
             <RecipePreview key={recipe.slug} recipe={recipe} />
           ))}
-        </SimpleGrid>
+        </Flex>
 
         {/* Categories*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
