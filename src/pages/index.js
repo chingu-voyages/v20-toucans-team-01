@@ -1,15 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
-import Layout from "../styles/layout";
-import "../styles/bootstrap.min.css";
-import "../styles/global.css";
-import Difficulty from "../components/Difficulty";
-import Mealtype from "../components/Mealtype";
 import Nav from "../components/Nav";
 import { SimpleGrid, Flex, Heading, Text, Box } from "@chakra-ui/core";
+//import Difficulty from "../components/Difficulty";
+//import Mealtype from "../components/Mealtype";
 
 export default function App() {
   const recipes = useRecipes();
@@ -31,10 +27,9 @@ export default function App() {
 
       <Nav />
 
-      {/* Main page starts here */}
+      {/* Main Content */}
       <Box as="main">
-        {/* First section starts here*/}
-
+        {/* First Section*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
           <Heading as="h2" size="xl" fontWeight="700">
             Weekly Chef&apos;s Specials
@@ -50,38 +45,16 @@ export default function App() {
             <RecipePreview key={recipe.slug} recipe={recipe} />
           ))}
         </SimpleGrid>
-        {/* First section ends here */}
 
-        {/* Second section starts here*/}
+        {/* Categories*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
           <Heading as="h2" size="xl" fontWeight="700">
             Categories
           </Heading>
         </Flex>
-        {/* <div>
-        <div>
-          <h2>Categories</h2>
-        </div>
-        <div>
-          {recipes.map((recipe) => (
-            <RecipePreview key={recipe.slug} recipe={recipe} />
-          ))}
-        </div>
-        <div>
-          {recipes.map((recipe) => (
-            <RecipePreview key={recipe.slug} recipe={recipe} />
-          ))}
-        </div>
-        <div>
-          {recipes.map((recipe) => (
-            <RecipePreview key={recipe.slug} recipe={recipe} />
-          ))}
-        </div>
-      </div> */}
-        {/* Second section ends here */}
       </Box>
 
-      {/* Footer starts here */}
+      {/* Footer*/}
       <Flex as="footer" justify="center" mt={4}>
         <Text>
           © 2020 Copyright{" "}
@@ -90,7 +63,6 @@ export default function App() {
           </a>
         </Text>
       </Flex>
-      {/* Footer ends here */}
     </React.StrictMode>
   );
 }
