@@ -9,20 +9,11 @@ import "../styles/global.css";
 import Difficulty from "../components/Difficulty";
 import Mealtype from "../components/Mealtype";
 import Nav from "../components/Nav";
-import {
-  SimpleGrid,
-  useTheme,
-  Flex,
-  Heading,
-  Text,
-  Box,
-} from "@chakra-ui/core";
+import { SimpleGrid, Flex, Heading, Text, Box } from "@chakra-ui/core";
 
 export default function App() {
   const recipes = useRecipes();
-  const theme = useTheme();
-  console.log(theme);
-  console.log(Link);
+
   return (
     <React.StrictMode>
       <Helmet>
