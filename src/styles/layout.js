@@ -1,6 +1,9 @@
 import React from "react";
 import { css, Global } from "@emotion/core";
 
+// TODO: Currently unused, exceot unnecessarily in recipe page.
+// Either use it later, or remove on project completion
+
 export default function Layout({ children }) {
   return (
     <>
