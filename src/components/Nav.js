@@ -53,9 +53,10 @@ const Nav = () => {
 
       <Stack spacing={4}>
         <InputGroup>
-          <InputLeftElement
-            children={<Icon as={MdSearch} name="search" color="gray.300" />}
-          />
+          <InputLeftElement>
+            <Icon as={MdSearch} name="search" color="gray.300" />
+          </InputLeftElement>
+
           <Input color="black" type="search" placeholder="Search" />
         </InputGroup>
       </Stack>
