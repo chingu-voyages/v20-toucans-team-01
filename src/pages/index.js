@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
 import Nav from "../components/Nav";
-import { SimpleGrid, Flex, Heading, Text, Box } from "@chakra-ui/core";
+import { SimpleGrid, Flex, Heading, Text, Box, Link } from "@chakra-ui/core";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -58,9 +58,12 @@ export default function App() {
       <Flex as="footer" justify="center" mt={4}>
         <Text>
           © 2020 Copyright{" "}
-          <a href="https://github.com/chingu-voyages/v20-toucans-team-01">
+          <Link
+            isExternal
+            href="https://github.com/chingu-voyages/v20-toucans-team-01"
+          >
             Voyage 20 Toucans Team 01
-          </a>
+          </Link>
         </Text>
       </Flex>
     </React.StrictMode>
