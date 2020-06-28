@@ -29,7 +29,6 @@
     "@mdx-js/mdx": "^1.6.6",
     "@mdx-js/react": "^1.6.6",
     "@types/react": "^16.9.41",
-    "bootstrap": "^4.5.0",
     "emotion-theming": "^10.0.27",
     "gatsby": "^2.23.11",
     "gatsby-plugin-chakra-ui": "^1.0.0-next.2",
@@ -40,7 +39,6 @@
     "gatsby-source-filesystem": "^2.3.14",
     "idb-keyval": "^3.2.0",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0"

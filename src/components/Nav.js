@@ -1,6 +1,4 @@
 import React from "react";
-import "../styles/bootstrap.min.css";
-import "../styles/global.css";
 import {
   Box,
   Heading,
