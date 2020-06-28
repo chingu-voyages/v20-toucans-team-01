@@ -1,65 +1,67 @@
-import React from 'react';
-import "../styles/bootstrap.min.css";
-import "../styles/global.css";
+import React from "react";
+import {
+  Box,
+  Heading,
+  Flex,
+  Link,
+  InputGroup,
+  InputLeftElement,
+  Stack,
+  Input,
+  Icon,
+  Button,
+} from "@chakra-ui/core";
+import { Link as GatsbyLink } from "gatsby";
+import { MdSearch } from "react-icons/md";
+
+const MenuLink = ({ children }) => (
+  <Link as={GatsbyLink} mt={{ base: 4, md: 0 }} mr={6} display="block">
+    <Button variant="link" color="white" variantColor="teal">
+      {children}
+    </Button>
+  </Link>
+);
 
 const Nav = () => {
-    
-   
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Breakfast
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Brunch
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Lunch
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Dinner
-              </a>
-            </li>
-          </ul>
-        </div>
-        <h1>Toucan Recipes</h1>
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify={{ xs: "center", md: "space-between" }}
+      wrap="wrap"
+      padding="1.5rem"
+      bg="teal.500"
+      color="white"
+    >
+      <Flex align="center" mr={5}>
+        <Heading as="h1" size="lg" fontWeight="700">
+          Toucan Recipes
+        </Heading>
+      </Flex>
 
-        <form className="form-inline">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          ></input>
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
-      </nav>
-    )
-}
+      <Box
+        display={{ xs: "none", md: "flex" }}
+        width={{ xs: "full", md: "auto" }}
+        alignItems="center"
+        flexGrow={1}
+      >
+        <MenuLink>Breakfast</MenuLink>
+        <MenuLink>Brunch</MenuLink>
+        <MenuLink>Lunch</MenuLink>
+        <MenuLink>Dinner</MenuLink>
+      </Box>
+
+      <Stack spacing={4}>
+        <InputGroup>
+          <InputLeftElement>
+            <Icon as={MdSearch} name="search" color="gray.300" />
+          </InputLeftElement>
+
+          <Input color="black" type="search" placeholder="Search" />
+        </InputGroup>
+      </Stack>
+    </Flex>
+  );
+};
 
 export default Nav;
