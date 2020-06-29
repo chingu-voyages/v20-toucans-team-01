@@ -16,7 +16,7 @@ import { MdSearch } from "react-icons/md";
 
 const MenuLink = ({ children }) => (
   <Link as={GatsbyLink} mt={{ base: 4, md: 0 }} mr={6} display="block">
-    <Button fontWeight="bold" variant="link" color="blackAlpha.800">
+    <Button fontWeight="medium" variant="link" color="blackAlpha.800">
       {children}
     </Button>
   </Link>
