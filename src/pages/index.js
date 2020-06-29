@@ -41,7 +41,7 @@ export default function App() {
           >
             Featured
           </Heading>
-          <Text mb={8}>
+          <Text mb={8} textAlign="center">
             Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
           </Text>
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
