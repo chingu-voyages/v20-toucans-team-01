@@ -1,7 +1,12 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql, Link as GatsbyLink } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
+import Layout from "../styles/layout";
+import { MDXProvider } from "@mdx-js/react";
+import RecipeLayout from "../components/recipe-layout";
+import Nav from "../components/Nav";
+import { Link } from "@chakra-ui/core";
 
 export const query = graphql`
   query($slug: String!) {
@@ -17,20 +22,35 @@ export const query = graphql`
   }
 `;
 
-export default function RecipeTemplate({ data: { mdx: recipe } }) {
-  var { title, author, time, servings } = recipe.frontmatter;
+export default function RecipeTemplate({
+  data: {
+    mdx: {
+      frontmatter: { title, author, time, servings },
+      body,
+    },
+  },
+}) {
   return (
-    <>
-      <Helmet>
-        <title>{title} | Toucan Recipes</title>
-      </Helmet>
-      <h1>{title}</h1>
-      <p>by {author}</p>
-      <p>Prep Time: {time}</p>
-      {servings && <p>Serves {servings} people</p>}
+    <div>
+      <Nav />
+      <Layout>
+        <Helmet>
+          <title>Cook {title} — Toucan Recipes</title>
+        </Helmet>
 
-      <MDXRenderer>{recipe.body}</MDXRenderer>
-      <Link to="/">&larr; back to home</Link>
-    </>
+        <h1>{title}</h1>
+        <p>by {author}</p>
+        <p>Prep Time: {time}</p>
+        {servings && <p>Serves {servings} people</p>}
+
+        <MDXProvider components={{ RecipeLayout }}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </MDXProvider>
+
+        <Link as={GatsbyLink} to="/">
+          &larr; back to home
+        </Link>
+      </Layout>
+    </div>
   );
 }

@@ -9,8 +9,7 @@ export default function useRecipes() {
             title
             slug
             author
-            time
-            servings
+            image
           }
           excerpt
         }
@@ -18,12 +17,13 @@ export default function useRecipes() {
     }
   `);
 
-  return data.allMdx.nodes.map((recipe) => ({
-    title: recipe.frontmatter.title,
-    author: recipe.frontmatter.author,
-    slug: recipe.frontmatter.slug,
-    time: recipe.frontmatter.time,
-    servings: recipe.frontmatter.servings,
-    excerpt: recipe.excerpt,
-  }));
+  return data.allMdx.nodes.map(
+    ({ frontmatter: { title, author, slug, image }, excerpt }) => ({
+      title,
+      author,
+      slug,
+      image,
+      excerpt,
+    })
+  );
 }

@@ -1,12 +1,23 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
+import { css } from "@emotion/core";
+import { Link, Image } from "@chakra-ui/core";
 
-export default function RecipePreview({ recipe: { slug, title } }) {
+export default function RecipePreview({ recipe: { slug, title, image } }) {
   return (
-    <article>
-      <h2>
-        <Link to={slug}>{title}</Link>
-      </h2>
-    </article>
+    <Link as={GatsbyLink} to={slug} width="64" height="64" m="auto">
+      <Image
+        css={css`
+          border-radius: 10%;
+        `}
+        src={
+          image ??
+          "https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+        }
+        alt={`Cooked ${title}`}
+        width="64"
+        height="64"
+      />
+    </Link>
   );
 }
