@@ -16,7 +16,7 @@ import { MdSearch } from "react-icons/md";
 
 const MenuLink = ({ children }) => (
   <Link as={GatsbyLink} mt={{ base: 4, md: 0 }} mr={6} display="block">
-    <Button variant="link" color="white" variantColor="teal">
+    <Button fontWeight="bold" variant="link" color="blackAlpha.800">
       {children}
     </Button>
   </Link>
@@ -30,12 +30,18 @@ const Nav = () => {
       justify={{ base: "center", md: "space-between" }}
       wrap="wrap"
       padding="1.5rem"
-      bg="teal.500"
-      color="white"
+      maxW="1280px"
+      m="0 auto"
     >
       <Flex align="center" mr={{ sm: 5 }}>
-        <Heading as="h1" size="lg" fontWeight="700">
-          Toucan Recipes
+        <Heading
+          as="h1"
+          color="facebook.500"
+          size="lg"
+          fontWeight="700"
+          fontFamily='"roboto slab", monospace'
+        >
+          toucan recipes
         </Heading>
       </Flex>
 
