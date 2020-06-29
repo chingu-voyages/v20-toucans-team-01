@@ -1,11 +1,12 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql, Link as GatsbyLink } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Helmet } from "react-helmet";
 import Layout from "../styles/layout";
 import { MDXProvider } from "@mdx-js/react";
 import RecipeLayout from "../components/recipe-layout";
 import Nav from "../components/Nav";
+import { Link } from "@chakra-ui/core";
 
 export const query = graphql`
   query($slug: String!) {
@@ -46,7 +47,9 @@ export default function RecipeTemplate({
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
 
-        <Link to="/">&larr; back to home</Link>
+        <Link as={GatsbyLink} to="/">
+          &larr; back to home
+        </Link>
       </Layout>
     </div>
   );
