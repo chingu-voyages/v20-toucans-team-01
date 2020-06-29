@@ -31,8 +31,15 @@ export default function App() {
       <Box as="main">
         {/* First Section*/}
         <Flex mt={5} direction="column" align="center" justify="center">
-          <Heading textAlign="center" as="h2" mb={5} size="xl" fontWeight="700">
-            Weekly Chef&apos;s Specials
+          <Heading
+            textAlign="center"
+            as="h2"
+            mb={5}
+            size="xl"
+            fontWeight="700"
+            fontFamily="aleo, monospace"
+          >
+            Chef&apos;s Weekly Specials
           </Heading>
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
             {recipes.map((recipe) => (
@@ -43,7 +50,12 @@ export default function App() {
 
         {/* Categories*/}
         <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
-          <Heading as="h2" size="xl" fontWeight="700">
+          <Heading
+            as="h2"
+            size="xl"
+            fontWeight="700"
+            fontFamily="aleo, monospace"
+          >
             Categories
           </Heading>
         </Flex>
