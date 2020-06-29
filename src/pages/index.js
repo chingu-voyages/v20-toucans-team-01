@@ -30,15 +30,8 @@ export default function App() {
       {/* Main Content */}
       <Box as="main">
         {/* First Section*/}
-        <Flex direction="column" align="center" justify="center">
-          <Heading
-            textAlign="center"
-            as="h2"
-            mt={5}
-            mb={5}
-            size="xl"
-            fontWeight="700"
-          >
+        <Flex mt={5} direction="column" align="center" justify="center">
+          <Heading textAlign="center" as="h2" mb={5} size="xl" fontWeight="700">
             Weekly Chef&apos;s Specials
           </Heading>
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
