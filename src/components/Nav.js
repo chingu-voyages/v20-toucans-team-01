@@ -27,21 +27,21 @@ const Nav = () => {
     <Flex
       as="nav"
       align="center"
-      justify={{ xs: "center", md: "space-between" }}
+      justify={{ base: "center", md: "space-between" }}
       wrap="wrap"
       padding="1.5rem"
       bg="teal.500"
       color="white"
     >
-      <Flex align="center" mr={5}>
+      <Flex align="center" mr={{ sm: 5 }}>
         <Heading as="h1" size="lg" fontWeight="700">
           Toucan Recipes
         </Heading>
       </Flex>
 
       <Box
-        display={{ xs: "none", md: "flex" }}
-        width={{ xs: "full", md: "auto" }}
+        display={{ base: "none", md: "flex" }}
+        width={{ base: "full", md: "auto" }}
         alignItems="center"
         flexGrow={1}
       >
