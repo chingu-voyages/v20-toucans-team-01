@@ -34,13 +34,16 @@ export default function App() {
           <Heading
             textAlign="center"
             as="h2"
-            mb={5}
             size="xl"
             fontWeight="700"
             fontFamily="aleo, monospace"
+            mb={5}
           >
-            Chef&apos;s Weekly Specials
+            Featured
           </Heading>
+          <Text mb={8}>
+            Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
+          </Text>
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
             {recipes.map((recipe) => (
               <RecipePreview key={recipe.slug} recipe={recipe} />
