@@ -1,7 +1,6 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import { css } from "@emotion/core";
-import { Link, Image, Box, Text, Heading } from "@chakra-ui/core";
+import { Link, Image } from "@chakra-ui/core";
 
 export default function RecipePreview({ recipe: { slug, title, image } }) {
   return (
