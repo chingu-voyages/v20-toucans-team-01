@@ -38,7 +38,7 @@ export default function App() {
       {/* Main Content */}
       <Box as="main">
         {/* First Section*/}
-        <VStack spacing={5}>
+        <VStack as="section" spacing={5}>
           <Heading
             textAlign="center"
             as="h2"
@@ -58,8 +58,8 @@ export default function App() {
           </SimpleGrid>
         </VStack>
 
-        {/* Categories*/}
-        <Flex align="center" justify="center" mr={5} mb={5}>
+        {/* Categories Section */}
+        <VStack as="section">
           <Heading
             as="h2"
             size="xl"
@@ -68,7 +68,7 @@ export default function App() {
           >
             Categories
           </Heading>
-        </Flex>
+        </VStack>
       </Box>
 
       {/* Footer*/}
