@@ -27,19 +27,19 @@ const Nav = () => {
     <Flex
       as="nav"
       align="center"
-      justify={{ base: "center", md: "space-between" }}
-      wrap="wrap"
+      justify="space-between"
       padding="1.5rem"
       maxW="1280px"
       m="0 auto"
     >
-      <Flex align="center" mr={{ sm: 5 }}>
+      <Flex align="center" mr={5}>
         <Heading
           as="h1"
           color="facebook.500"
           size="lg"
           fontWeight="700"
           fontFamily='"roboto slab", monospace'
+          whiteSpace="nowrap"
         >
           toucan recipes
         </Heading>
@@ -57,7 +57,7 @@ const Nav = () => {
         <MenuLink>Dinner</MenuLink>
       </Box>
 
-      <Stack spacing={4}>
+      <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
         <InputGroup>
           <InputLeftElement>
             <Icon as={MdSearch} name="search" color="gray.300" />
