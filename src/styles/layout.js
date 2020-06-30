@@ -1,5 +1,6 @@
 import React from "react";
 import { css, Global } from "@emotion/core";
+import { Box } from "@chakra-ui/core";
 
 // TODO: Currently unused, exceot unnecessarily in recipe page.
 // Either use it later, or remove on project completion
@@ -54,14 +55,15 @@ export default function Layout({ children }) {
           }
         `}
       />
-      <main
+      <Box
+        as="main"
         css={css`
           margin: 2rem auto 4rem;
           max-width: 90vw;
         `}
       >
         {children}
-      </main>
+      </Box>
     </>
   );
 }
