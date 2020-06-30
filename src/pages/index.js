@@ -3,7 +3,15 @@ import { Helmet } from "react-helmet";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
 import Nav from "../components/Nav";
-import { SimpleGrid, Flex, Heading, Text, Box, Link } from "@chakra-ui/core";
+import {
+  SimpleGrid,
+  Flex,
+  Heading,
+  Text,
+  Box,
+  Link,
+  VStack,
+} from "@chakra-ui/core";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -30,18 +38,17 @@ export default function App() {
       {/* Main Content */}
       <Box as="main">
         {/* First Section*/}
-        <Flex mt={5} direction="column" align="center" justify="center">
+        <VStack spacing={5}>
           <Heading
             textAlign="center"
             as="h2"
             size="xl"
             fontWeight="700"
             fontFamily="aleo, monospace"
-            mb={5}
           >
             Featured
           </Heading>
-          <Text mb={8} textAlign="center">
+          <Text textAlign="center">
             Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
           </Text>
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
@@ -49,10 +56,10 @@ export default function App() {
               <RecipePreview key={recipe.slug} recipe={recipe} />
             ))}
           </SimpleGrid>
-        </Flex>
+        </VStack>
 
         {/* Categories*/}
-        <Flex align="center" justify="center" mt={5} mr={5} mb={5}>
+        <Flex align="center" justify="center" mr={5} mb={5}>
           <Heading
             as="h2"
             size="xl"
