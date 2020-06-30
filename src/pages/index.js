@@ -39,15 +39,7 @@ export default function App() {
       <Box as="main">
         {/* First Section*/}
         <VStack as="section" spacing={5}>
-          <Heading
-            textAlign="center"
-            as="h2"
-            size="xl"
-            fontWeight="700"
-            fontFamily="aleo, monospace"
-          >
-            Featured
-          </Heading>
+          <Heading fontFamily="aleo, monospace">Featured</Heading>
           <Text textAlign="center">
             Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
           </Text>
@@ -60,14 +52,7 @@ export default function App() {
 
         {/* Categories Section */}
         <VStack as="section">
-          <Heading
-            as="h2"
-            size="xl"
-            fontWeight="700"
-            fontFamily="aleo, monospace"
-          >
-            Categories
-          </Heading>
+          <Heading fontFamily="aleo, monospace">Categories</Heading>
         </VStack>
       </Box>
 
@@ -78,6 +63,7 @@ export default function App() {
           <Link
             isExternal
             href="https://github.com/chingu-voyages/v20-toucans-team-01"
+            color="facebook.500"
           >
             Voyage 20 Toucans Team 01
           </Link>
