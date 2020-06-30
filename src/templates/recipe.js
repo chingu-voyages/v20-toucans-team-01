@@ -6,7 +6,7 @@ import Layout from "../styles/layout";
 import { MDXProvider } from "@mdx-js/react";
 import RecipeLayout from "../components/recipe-layout";
 import Nav from "../components/Nav";
-import { Link } from "@chakra-ui/core";
+import { Link, VStack } from "@chakra-ui/core";
 
 export const query = graphql`
   query($slug: String!) {
@@ -38,18 +38,22 @@ export default function RecipeTemplate({
           <title>Cook {title} — Toucan Recipes</title>
         </Helmet>
 
-        <h1>{title}</h1>
-        <p>by {author}</p>
-        <p>Prep Time: {time}</p>
-        {servings && <p>Serves {servings} people</p>}
+        <VStack>
+          <div>
+            <h1>{title}</h1>
+            <p>by {author}</p>
+            <p>Prep Time: {time}</p>
+            {servings && <p>Serves {servings} people</p>}
 
-        <MDXProvider components={{ RecipeLayout }}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </MDXProvider>
+            <MDXProvider components={{ RecipeLayout }}>
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
 
-        <Link as={GatsbyLink} to="/">
-          &larr; back to home
-        </Link>
+            <Link as={GatsbyLink} to="/">
+              &larr; back to home
+            </Link>
+          </div>
+        </VStack>
       </Layout>
     </div>
   );
