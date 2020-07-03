@@ -21,6 +21,7 @@ export default function App() {
   return (
     <React.StrictMode>
       <Helmet>
+        <html lang="en" />
         <meta charSet="UTF-8" />
         <meta
           name="viewport"
