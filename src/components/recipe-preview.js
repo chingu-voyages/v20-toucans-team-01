@@ -2,9 +2,11 @@ import React from "react";
 import { Link as GatsbyLink } from "gatsby";
 import { Link, Image } from "@chakra-ui/core";
 
-export default function RecipePreview({ recipe: { slug, title, image } }) {
+export default function RecipePreview({
+  recipe: { slug, title, difficulty, image },
+}) {
   return (
-    <Link as={GatsbyLink} to={slug}>
+    <Link as={GatsbyLink} to={`${difficulty}/${slug}`}>
       <Image
         borderRadius="10%"
         src={

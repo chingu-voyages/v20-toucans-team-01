@@ -8,6 +8,7 @@ export default function useRecipes() {
           frontmatter {
             title
             slug
+            difficulty
             author
             image
           }
@@ -18,10 +19,11 @@ export default function useRecipes() {
   `);
 
   return data.allMdx.nodes.map(
-    ({ frontmatter: { title, author, slug, image }, excerpt }) => ({
+    ({ frontmatter: { title, slug, difficulty, author, image }, excerpt }) => ({
       title,
-      author,
+      difficulty,
       slug,
+      author,
       image,
       excerpt,
     })
