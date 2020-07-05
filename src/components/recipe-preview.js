@@ -4,9 +4,10 @@ import { Link, Image } from "@chakra-ui/core";
 
 export default function RecipePreview({
   recipe: { title, slug, type, difficulty, image },
+  ...props
 }) {
   return (
-    <Link as={GatsbyLink} to={`${type}/${difficulty}/${slug}`}>
+    <Link as={GatsbyLink} to={`${type}/${difficulty}/${slug}`} {...props}>
       <Image
         borderRadius="10%"
         src={
