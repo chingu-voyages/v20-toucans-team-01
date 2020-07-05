@@ -14,8 +14,14 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
-const MenuLink = ({ children }) => (
-  <Link as={GatsbyLink} mt={{ base: 4, md: 0 }} mr={6} display="block">
+const MenuLink = ({ children, ...props }) => (
+  <Link
+    as={GatsbyLink}
+    mt={{ base: 4, md: 0 }}
+    mr={6}
+    display="block"
+    {...props}
+  >
     <Button fontWeight="medium" variant="link" color="blackAlpha.800">
       {children}
     </Button>
