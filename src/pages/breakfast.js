@@ -1,3 +1,5 @@
+// Page reserved for breakfast logic.
+
 import React from "react";
 import { Helmet } from "react-helmet";
 import useRecipes from "../hooks/use-recipes";
@@ -11,6 +13,8 @@ import {
   Box,
   Link,
   VStack,
+  Button,
+  ButtonGroup,
 } from "@chakra-ui/core";
 
 export default function Breakfast() {
@@ -38,10 +42,13 @@ export default function Breakfast() {
       <Box as="main">
         {/* First Section*/}
         <VStack as="section" spacing={5}>
-          <Heading fontFamily="aleo, monospace">Featured</Heading>
           <Text textAlign="center">
-            Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
+            Feeling hungry? Enjoy this recipe, curated weekly by a chef lead!
           </Text>
+
+          {/* TODO: Refactor this to a smaller page */}
+          <Heading fontFamily="aleo, monospace">Featured</Heading>
+
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
             {recipes.map((recipe) => (
               <RecipePreview

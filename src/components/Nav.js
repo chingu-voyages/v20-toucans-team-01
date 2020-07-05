@@ -57,7 +57,7 @@ const Nav = () => {
         alignItems="center"
         flexGrow={1}
       >
-        <MenuLink>Breakfast</MenuLink>
+        <MenuLink to="/breakfast">Breakfast</MenuLink>
         <MenuLink>Brunch</MenuLink>
         <MenuLink>Lunch</MenuLink>
         <MenuLink>Dinner</MenuLink>
