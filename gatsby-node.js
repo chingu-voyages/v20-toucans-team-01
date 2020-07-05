@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             slug
+            type
             difficulty
           }
         }
@@ -18,10 +19,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const recipes = result.data.allMdx.nodes;
 
-  recipes.forEach(({ frontmatter: { slug, difficulty } }) => {
+  recipes.forEach(({ frontmatter: { slug, type, difficulty } }) => {
     if (slug) {
       actions.createPage({
-        path: `${difficulty}/${slug}`,
+        path: `${type}/${difficulty}/${slug}`,
         component: require.resolve("./src/templates/recipe.js"),
         context: {
           slug: slug,

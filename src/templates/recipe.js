@@ -13,6 +13,7 @@ export const query = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        type
         difficulty
         author
         time
@@ -26,7 +27,7 @@ export const query = graphql`
 export default function RecipeTemplate({
   data: {
     mdx: {
-      frontmatter: { title, difficulty, author, time, servings },
+      frontmatter: { title, type, difficulty, author, time, servings },
       body,
     },
   },
@@ -42,7 +43,8 @@ export default function RecipeTemplate({
         <VStack>
           <Box>
             <Heading>{title}</Heading>
-            <Text>Difficulty: {difficulty}</Text>
+            <Text>{type}</Text>
+            <Text>{difficulty}</Text>
             <Text>by {author}</Text>
             <Text>Prep Time: {time}</Text>
             {servings && <Text>Serves {servings} people</Text>}
