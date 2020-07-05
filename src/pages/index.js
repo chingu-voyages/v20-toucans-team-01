@@ -11,12 +11,15 @@ import {
   Box,
   Link,
   VStack,
+  Button,
+  ButtonGroup,
 } from "@chakra-ui/core";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
 export default function App() {
   const recipes = useRecipes();
+  const featuredRecipe = "first recipe";
 
   return (
     <React.StrictMode>
@@ -42,18 +45,41 @@ export default function App() {
         <VStack as="section" spacing={5}>
           <Heading fontFamily="aleo, monospace">Featured</Heading>
           <Text textAlign="center">
-            Feeling hungry? Enjoy these recipes curated weekly by a chef lead!
+            Feeling hungry? Enjoy this recipe, curated weekly by a chef lead!
           </Text>
+          <RecipePreview
+            recipe={recipes.find(
+              (recipe) => recipe.title.toLowerCase?.() == featuredRecipe
+            )}
+          />
+
+          <Heading fontFamily="aleo, monospace">Difficulty</Heading>
+          <Text textAlign="center">
+            Make choices based on your cooking skill
+          </Text>
+
+          <ButtonGroup>
+            <Button>Easy</Button>
+            <Button>Medium</Button>
+            <Button>Hard</Button>
+          </ButtonGroup>
+
+          {/* Categories Section */}
+          <Heading fontFamily="aleo, monospace">Categories</Heading>
+          <ButtonGroup>
+            <Button>American</Button>
+            <Button>Greek</Button>
+            <Button>Japanese</Button>
+            <Button>European</Button>
+            <Button>Chinese</Button>
+            <Button>Korean</Button>
+          </ButtonGroup>
+
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
             {recipes.map((recipe) => (
               <RecipePreview key={recipe.slug} recipe={recipe} />
             ))}
           </SimpleGrid>
-        </VStack>
-
-        {/* Categories Section */}
-        <VStack as="section">
-          <Heading fontFamily="aleo, monospace">Categories</Heading>
         </VStack>
       </Box>
 
