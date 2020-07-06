@@ -14,6 +14,7 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
+
 const MenuLink = ({ children, ...props }) => (
   <Link
     as={GatsbyLink}
@@ -70,6 +71,7 @@ const Nav = () => {
           </InputLeftElement>
 
           <Input color="black" type="search" placeholder="Search" />
+          
         </InputGroup>
       </Stack>
     </Flex>
