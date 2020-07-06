@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import useRecipes from "../hooks/use-recipes";
 import RecipePreview from "../components/recipe-preview";
@@ -20,6 +20,23 @@ import {
 export default function App() {
   const recipes = useRecipes();
   const featuredRecipe = "first recipe";
+  var [difficulty, setDifficulty] = useState();
+  var [category, setCategory] = useState();
+
+  function getSelHandler(v, setV) {
+    return function makeHandler(btnV) {
+      return function handler() {
+        if (btnV != v) {
+          setV(btnV);
+        } else {
+          setV(undefined);
+        }
+      };
+    };
+  }
+
+  var getDiffHandler = getSelHandler(difficulty, setDifficulty);
+  var getCategHandler = getSelHandler(category, setCategory);
 
   return (
     <React.StrictMode>
@@ -58,26 +75,38 @@ export default function App() {
             Make choices based on your cooking skill
           </Text>
 
+          {/* Difficulty */}
           <ButtonGroup>
-            <Button>Easy</Button>
-            <Button>Medium</Button>
-            <Button>Hard</Button>
+            <Button onClick={getDiffHandler("easy")}>Easy</Button>
+            <Button onClick={getDiffHandler("medium")}>Medium</Button>
+            <Button onClick={getDiffHandler("hard")}>Hard</Button>
           </ButtonGroup>
 
           {/* Categories Section */}
           <Heading fontFamily="aleo, monospace">Categories</Heading>
           <ButtonGroup>
-            <Button>American</Button>
-            <Button>Greek</Button>
-            <Button>Japanese</Button>
-            <Button>European</Button>
-            <Button>Chinese</Button>
-            <Button>Korean</Button>
+            <Button onClick={getCategHandler("american")}>American</Button>
+            <Button onClick={getCategHandler("greek")}>Greek</Button>
+            <Button onClick={getCategHandler("japanese")}>Japanese</Button>
+            <Button onClick={getCategHandler("european")}>European</Button>
+            <Button onClick={getCategHandler("chinese")}>Chinese</Button>
+            <Button onClick={getCategHandler("korean")}>Korean</Button>
           </ButtonGroup>
 
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
             {recipes.map((recipe) => (
-              <RecipePreview key={recipe.slug} recipe={recipe} />
+              <RecipePreview
+                display={
+                  /*Show based on difficulty and category*/
+                  (!difficulty ||
+                    difficulty == recipe.difficulty.toLowerCase?.()) &&
+                  (!category || recipe.category?.includes((v) => v == category))
+                    ? "unset"
+                    : "none"
+                }
+                key={recipe.slug}
+                recipe={recipe}
+              />
             ))}
           </SimpleGrid>
         </VStack>
