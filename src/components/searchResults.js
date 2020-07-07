@@ -2,7 +2,7 @@ import React from "react"
 import "../styles/search-styles.css"
 
 const SearchResults = ({ query, results }) => (
-  <section aria-label="Search results for all posts">
+  <section className="search-results" aria-label="Search results for all posts">
     {!!results.length && query && (
       <h2
         className="search-results-count"
@@ -16,6 +16,7 @@ const SearchResults = ({ query, results }) => (
         <ol className="search-results-list">
         {results.map(({
           title,
+          image,
           url,
           type,
           author
@@ -27,6 +28,7 @@ const SearchResults = ({ query, results }) => (
                 {title}
               </a>
             </h3>
+            <img src={image} alt="Recipe thumbnail" />
             <small>{type}</small>
             {author && <p>{author}</p>}
           </li>
