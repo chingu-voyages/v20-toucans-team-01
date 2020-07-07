@@ -89,7 +89,6 @@ export default function App() {
             <Button onClick={getCategHandler("greek")}>Greek</Button>
             <Button onClick={getCategHandler("japanese")}>Japanese</Button>
             <Button onClick={getCategHandler("european")}>European</Button>
-            <Button onClick={getCategHandler("chinese")}>Chinese</Button>
             <Button onClick={getCategHandler("korean")}>Korean</Button>
           </ButtonGroup>
 
