@@ -45,8 +45,8 @@ export default function RecipeTemplate({
             <Heading>{title}</Heading>
             <Text>{type}</Text>
             <Text>{difficulty}</Text>
-            <Text>by {author}</Text>
-            <Text>Prep Time: {time}</Text>
+            {author && <Text>by {author}</Text>}
+            {time && <Text>Prep Time: {time}</Text>}
             {servings && <Text>Serves {servings} people</Text>}
 
             <MDXProvider components={{ RecipeLayout }}>
