@@ -72,11 +72,11 @@ export default function App() {
             )}
           />
 
-          <Heading fontFamily="aleo, monospace">Difficulty</Heading>
+          {/* Meal Type */}
+          <Heading fontFamily="aleo, monospace">Meal Type</Heading>
           <Text textAlign="center">
-            Make choices based on your cooking skill
+            Eating breakfast for dinner? We won&apos;t judge!
           </Text>
-
           <SimpleGrid spacing={10} columns={{ xs: 2, md: 4 }} mb={5}>
             <MealTypeBtn src="images/pancakes.png">Breakfast</MealTypeBtn>
             <MealTypeBtn src="images/tamagoyaki.png">Brunch</MealTypeBtn>
@@ -85,6 +85,10 @@ export default function App() {
           </SimpleGrid>
 
           {/* Difficulty */}
+          <Heading fontFamily="aleo, monospace">Difficulty</Heading>
+          <Text textAlign="center">
+            Make choices based on your cooking skill
+          </Text>
           <ButtonGroup>
             <Button onClick={getDiffHandler("easy")}>Easy</Button>
             <Button onClick={getDiffHandler("medium")}>Medium</Button>
