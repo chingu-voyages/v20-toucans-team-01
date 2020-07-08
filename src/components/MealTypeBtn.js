@@ -8,7 +8,9 @@ export default function MealTypeBtn({ children }) {
       alignItems="center"
       justifyContent="center"
       bgSize="contain"
-      boxSize={{ base: "13rem", md: "10rem" }}
+      boxSize={{ base: "40vw", md: "20vw" }}
+      maxW={64}
+      maxH={64}
       bgImage="url('https://www.themealdb.com/images/media/meals/1544384070.jpg')"
     >
       <Text
