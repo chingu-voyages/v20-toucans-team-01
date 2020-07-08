@@ -21,7 +21,7 @@ import { css } from "@emotion/core";
 
 export default function App() {
   const recipes = useRecipes();
-  const featuredRecipe = "first recipe";
+  const featuredRecipe = "pancakes";
   var [difficulty, setDifficulty] = useState();
   var [category, setCategory] = useState();
 
