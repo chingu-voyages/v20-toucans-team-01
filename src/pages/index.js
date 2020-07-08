@@ -14,6 +14,7 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/core";
+import MealTypeBtn from "../components/MealTypeBtn";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -74,6 +75,13 @@ export default function App() {
           <Text textAlign="center">
             Make choices based on your cooking skill
           </Text>
+
+          <SimpleGrid spacing={10} columns={{ xs: 2, md: 4 }} mb={5}>
+            <MealTypeBtn>Breakfast</MealTypeBtn>
+            <MealTypeBtn>Brunch</MealTypeBtn>
+            <MealTypeBtn>Lunch</MealTypeBtn>
+            <MealTypeBtn>Dinner</MealTypeBtn>
+          </SimpleGrid>
 
           {/* Difficulty */}
           <ButtonGroup>
