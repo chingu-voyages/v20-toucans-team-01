@@ -116,7 +116,7 @@ export default function App() {
                   /*Show based on difficulty and category*/
                   (!difficulty ||
                     difficulty == recipe.difficulty.toLowerCase?.()) &&
-                  (!category || recipe.category?.includes((v) => v == category))
+                  (!category || recipe.category?.toLowerCase() == category)
                     ? "unset"
                     : "none"
                 }

@@ -10,6 +10,7 @@ export default function useRecipes() {
             slug
             type
             difficulty
+            category
             image {
               sharp: childImageSharp {
                 fluid(maxWidth: 256, maxHeight: 256) {
@@ -25,11 +26,15 @@ export default function useRecipes() {
   `);
 
   return data.allMdx.nodes.map(
-    ({ frontmatter: { title, slug, type, difficulty, image }, excerpt }) => ({
+    ({
+      frontmatter: { title, slug, type, difficulty, category, image },
+      excerpt,
+    }) => ({
       title,
       slug,
       type,
       difficulty,
+      category,
       image,
       excerpt,
     })
