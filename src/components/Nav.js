@@ -14,7 +14,6 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
-
 const MenuLink = ({ children, ...props }) => (
   <Link
     as={GatsbyLink}
@@ -52,17 +51,13 @@ const Nav = () => {
         </Heading>
       </Flex>
 
-      <Box
+      {/* <Box
         display={{ base: "none", md: "flex" }}
         width={{ base: "full", md: "auto" }}
         alignItems="center"
         flexGrow={1}
       >
-        <MenuLink to="/breakfast">Breakfast</MenuLink>
-        <MenuLink>Brunch</MenuLink>
-        <MenuLink>Lunch</MenuLink>
-        <MenuLink>Dinner</MenuLink>
-      </Box>
+      </Box> */}
 
       <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
         <InputGroup>
@@ -71,7 +66,6 @@ const Nav = () => {
           </InputLeftElement>
 
           <Input color="black" type="search" placeholder="Search" />
-          
         </InputGroup>
       </Stack>
     </Flex>
