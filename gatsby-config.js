@@ -30,7 +30,6 @@ module.exports = {
           { name: "slug", store: true },
           { name: "type" },
           { name: "difficulty", store: true },
-          { name: "author", store: true },
         ],
         resolvers: {
           Mdx: {
@@ -39,7 +38,6 @@ module.exports = {
             slug: (node) => node.frontmatter.slug,
             type: (node) => node.frontmatter.type,
             difficulty: (node) => node.frontmatter.difficulty,
-            author: (node) => node.frontmatter.author,
           },
         },
         filename: "search_index.json",

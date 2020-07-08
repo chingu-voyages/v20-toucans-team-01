@@ -1,5 +1,5 @@
-import React from "react"
-import "../styles/search-styles.css"
+import React from "react";
+import "../styles/search-styles.css";
 
 const SearchResults = ({ query, results }) => (
   <section className="search-results" aria-label="Search results for all posts">
@@ -13,15 +13,8 @@ const SearchResults = ({ query, results }) => (
       </h2>
     )}
     {!!results.length && (
-        <ol className="search-results-list">
-        {results.map(({
-          title,
-          image,
-          url,
-          type,
-          author
-        }
-    ) => (
+      <ol className="search-results-list">
+        {results.map(({ title, image, url, type }) => (
           <li key={title}>
             <h3 className="search-results-list__heading">
               <a href={url} className="search-results-list__link">
@@ -30,12 +23,11 @@ const SearchResults = ({ query, results }) => (
             </h3>
             <img src={image} alt="Recipe thumbnail" />
             <small>{type}</small>
-            {author && <p>{author}</p>}
           </li>
         ))}
       </ol>
     )}
   </section>
-)
+);
 
-export default SearchResults
+export default SearchResults;
