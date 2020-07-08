@@ -7,7 +7,7 @@ export default function MealTypes() {
   var images = useStaticQuery(graphql`
     fragment getImg on File {
       sharp: childImageSharp {
-        fluid {
+        fluid(maxWidth: 256, maxHeight: 256) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
