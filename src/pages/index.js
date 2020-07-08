@@ -14,8 +14,8 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/core";
-import MealTypeBtn from "../components/MealTypeBtn";
 import { css } from "@emotion/core";
+import MealTypes from "../components/meal-type-group";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -77,12 +77,7 @@ export default function App() {
           <Text textAlign="center">
             Eating breakfast for dinner? We won&apos;t judge!
           </Text>
-          <SimpleGrid spacing={10} columns={{ xs: 2, md: 4 }} mb={5}>
-            <MealTypeBtn src="images/pancakes.png">Breakfast</MealTypeBtn>
-            <MealTypeBtn src="images/tamagoyaki.png">Brunch</MealTypeBtn>
-            <MealTypeBtn src="images/clam_chowder.png">Lunch</MealTypeBtn>
-            <MealTypeBtn src="images/rosol.png">Dinner</MealTypeBtn>
-          </SimpleGrid>
+          <MealTypes />
 
           {/* Difficulty */}
           <Heading fontFamily="aleo, monospace">Difficulty</Heading>
