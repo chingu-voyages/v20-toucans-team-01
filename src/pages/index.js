@@ -15,6 +15,7 @@ import {
   ButtonGroup,
 } from "@chakra-ui/core";
 import MealTypeBtn from "../components/MealTypeBtn";
+import { css } from "@emotion/core";
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
 
@@ -92,7 +93,16 @@ export default function App() {
 
           {/* Categories Section */}
           <Heading fontFamily="aleo, monospace">Categories</Heading>
-          <ButtonGroup>
+          <ButtonGroup
+            css={css`
+              button {
+                margin-bottom: 1rem;
+              }
+            `}
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="center"
+          >
             <Button onClick={getCategHandler("american")}>American</Button>
             <Button onClick={getCategHandler("greek")}>Greek</Button>
             <Button onClick={getCategHandler("japanese")}>Japanese</Button>
