@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/core";
+import { Button, Text } from "@chakra-ui/core";
+import { css } from "@emotion/core";
 
 export default function MealTypeBtn({ children, src }) {
   return (
-    <Box
+    <Button
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -13,15 +14,13 @@ export default function MealTypeBtn({ children, src }) {
       maxH={64}
       bg={`url("${src}") rgba(0, 0, 0, 0.4)`}
       bgBlendMode="multiply"
+      color="white"
+      fontFamily="aleo"
+      fontSize={24}
+      textShadow="rgba(0, 0, 0, 0.16) 0px 0.125rem 0.5rem"
+      _hover={{ color: "black", background: "#E2E8F0" }}
     >
-      <Text
-        color="white"
-        fontFamily="aleo"
-        fontSize={24}
-        textShadow="rgba(0, 0, 0, 0.16) 0px 0.125rem 0.5rem"
-      >
-        {children}
-      </Text>
-    </Box>
+      {children}
+    </Button>
   );
 }
