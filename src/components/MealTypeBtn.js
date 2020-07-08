@@ -11,7 +11,8 @@ export default function MealTypeBtn({ children }) {
       boxSize={{ base: "40vw", md: "20vw" }}
       maxW={64}
       maxH={64}
-      bgImage="url('https://www.themealdb.com/images/media/meals/1544384070.jpg')"
+      bg="url('https://www.themealdb.com/images/media/meals/1544384070.jpg') rgba(0, 0, 0, 0.4)"
+      bgBlendMode="multiply"
     >
       <Text
         color="white"
