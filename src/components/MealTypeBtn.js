@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, Text } from "@chakra-ui/core";
-import { css } from "@emotion/core";
+import { Button } from "@chakra-ui/core";
 
 export default function MealTypeBtn({ children, src }) {
   return (
