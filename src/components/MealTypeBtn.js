@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/core";
 
-export default function MealTypeBtn({ children, src }) {
+export default function MealTypeBtn({ children, src, ...props }) {
   return (
     <Button
       display="flex"
@@ -18,6 +18,7 @@ export default function MealTypeBtn({ children, src }) {
       fontSize={24}
       textShadow="rgba(0, 0, 0, 0.16) 0px 0.125rem 0.5rem"
       _hover={{ color: "black", background: "#E2E8F0" }}
+      {...props}
     >
       {children}
     </Button>
