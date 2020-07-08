@@ -1,32 +1,15 @@
 import React from "react";
 import {
-  Box,
   Heading,
   Flex,
-  Link,
   InputGroup,
   InputLeftElement,
   Stack,
   Input,
   Icon,
-  Button,
 } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
-
-const MenuLink = ({ children, ...props }) => (
-  <Link
-    as={GatsbyLink}
-    mt={{ base: 4, md: 0 }}
-    mr={6}
-    display="block"
-    {...props}
-  >
-    <Button fontWeight="medium" variant="link" color="blackAlpha.800">
-      {children}
-    </Button>
-  </Link>
-);
 
 const Nav = () => {
   return (
@@ -50,14 +33,6 @@ const Nav = () => {
           toucan recipes
         </Heading>
       </Flex>
-
-      {/* <Box
-        display={{ base: "none", md: "flex" }}
-        width={{ base: "full", md: "auto" }}
-        alignItems="center"
-        flexGrow={1}
-      >
-      </Box> */}
 
       <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
         <InputGroup>
