@@ -1,17 +1,17 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/core";
 
-export default function MealTypeBtn({ children }) {
+export default function MealTypeBtn({ children, src }) {
   return (
     <Box
       display="flex"
       alignItems="center"
       justifyContent="center"
-      bgSize="contain"
+      bgSize="cover"
       boxSize={{ base: "40vw", md: "20vw" }}
       maxW={64}
       maxH={64}
-      bg="url('https://www.themealdb.com/images/media/meals/1544384070.jpg') rgba(0, 0, 0, 0.4)"
+      bg={`url("${src}") rgba(0, 0, 0, 0.4)`}
       bgBlendMode="multiply"
     >
       <Text
