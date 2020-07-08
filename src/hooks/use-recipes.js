@@ -10,7 +10,13 @@ export default function useRecipes() {
             slug
             type
             difficulty
-            image
+            image {
+              sharp: childImageSharp {
+                fluid(maxWidth: 256, maxHeight: 256) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
           excerpt
         }
