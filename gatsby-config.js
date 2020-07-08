@@ -30,7 +30,6 @@ module.exports = {
           { name: "slug", store: true },
           { name: "type" },
           { name: "difficulty", store: true },
-          { name: "time", store: true },
           { name: "author", store: true },
         ],
         resolvers: {
@@ -40,7 +39,6 @@ module.exports = {
             slug: (node) => node.frontmatter.slug,
             type: (node) => node.frontmatter.type,
             difficulty: (node) => node.frontmatter.difficulty,
-            time: (node) => node.frontmatter.time,
             author: (node) => node.frontmatter.author,
           },
         },

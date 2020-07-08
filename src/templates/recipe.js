@@ -16,7 +16,6 @@ export const query = graphql`
         type
         difficulty
         author
-        time
       }
       body
     }
@@ -26,7 +25,7 @@ export const query = graphql`
 export default function RecipeTemplate({
   data: {
     mdx: {
-      frontmatter: { title, type, difficulty, author, time },
+      frontmatter: { title, type, difficulty, author },
       body,
     },
   },
@@ -45,7 +44,6 @@ export default function RecipeTemplate({
             <Text>{type}</Text>
             <Text>{difficulty}</Text>
             {author && <Text>by {author}</Text>}
-            {time && <Text>Prep Time: {time}</Text>}
 
             <MDXProvider components={{ RecipeLayout }}>
               <MDXRenderer>{body}</MDXRenderer>
