@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Toucan Recipes',
-    author: 'Toucan Team 01',
-    description: 'A recipe tool to figure out what you can cook!'
+    title: "Toucan Recipes",
+    author: "Toucan Team 01",
+    description: "A recipe tool to figure out what you can cook!",
   },
   // eslint-disable-next-line no-unused-labels
   plugins: [
@@ -10,6 +10,8 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-chakra-ui`,
     `gatsby-plugin-netlify`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     `gatsby-plugin-mdx`,
     {
       resolve: "gatsby-source-filesystem",
@@ -19,31 +21,31 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-lunr',
+      resolve: "gatsby-plugin-lunr",
       options: {
-        languages: [{ name: 'en' }],
+        languages: [{ name: "en" }],
         fields: [
-          { name: 'title', store: true },
-          { name: 'image', store: true },
-          { name: 'slug', store: true },
-          { name: 'type' },
-          { name: 'difficulty', store: true },
-          { name: 'time', store: true },
-          { name: 'author', store: true }
+          { name: "title", store: true },
+          { name: "image", store: true },
+          { name: "slug", store: true },
+          { name: "type" },
+          { name: "difficulty", store: true },
+          { name: "time", store: true },
+          { name: "author", store: true },
         ],
         resolvers: {
           Mdx: {
-            title: node => node.frontmatter.title,
-            image: node => node.frontmatter.image,
-            slug: node => node.frontmatter.slug,
-            type: node => node.frontmatter.type,
-            difficulty: node => node.frontmatter.difficulty,
-            time: node => node.frontmatter.time,
-            author: node => node.frontmatter.author
+            title: (node) => node.frontmatter.title,
+            image: (node) => node.frontmatter.image,
+            slug: (node) => node.frontmatter.slug,
+            type: (node) => node.frontmatter.type,
+            difficulty: (node) => node.frontmatter.difficulty,
+            time: (node) => node.frontmatter.time,
+            author: (node) => node.frontmatter.author,
           },
         },
-        filename: 'search_index.json'
-      }
-    }
+        filename: "search_index.json",
+      },
+    },
   ],
 };
