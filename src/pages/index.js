@@ -109,7 +109,7 @@ export default function App() {
             <Button onClick={getCategHandler("korean")}>Korean</Button>
           </ButtonGroup>
 
-          <SimpleGrid spacing={10} columns={{ xs: 1, md: 2 }} mb={5}>
+          <SimpleGrid spacing={10} columns={{ xs: 1, md: 2, lg: 3 }} mb={5}>
             {recipes.map((recipe) => (
               <RecipePreview
                 display={
