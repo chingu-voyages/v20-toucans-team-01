@@ -8,10 +8,15 @@ export default function RecipePreview({
   ...props
 }) {
   return (
-    <Link as={GatsbyLink} to={`${type}/${difficulty}/${slug}`} {...props}>
+    <Link
+      borderRadius="10%"
+      as={GatsbyLink}
+      to={`${type}/${difficulty}/${slug}`}
+      {...props}
+    >
       <Image
-        as={GatsbyImage}
         borderRadius="10%"
+        as={GatsbyImage}
         fluid={image.sharp.fluid}
         alt={`Cooked ${title}`}
         width="64"
