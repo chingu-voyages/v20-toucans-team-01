@@ -13,10 +13,13 @@ import {
   Tag,
   HStack,
   TagLeftIcon,
+  Image,
 } from "@chakra-ui/core";
 import { IoMdTime } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import { GiChefToque } from "react-icons/gi";
+import GatsbyImage from "gatsby-image";
+
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
@@ -25,6 +28,13 @@ export const query = graphql`
         type
         difficulty
         category
+        image {
+          sharp: childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
       body
     }
@@ -34,7 +44,7 @@ export const query = graphql`
 export default function RecipeTemplate({
   data: {
     mdx: {
-      frontmatter: { title, type, difficulty, category },
+      frontmatter: { title, type, difficulty, category, image },
       body,
     },
   },
@@ -47,7 +57,16 @@ export default function RecipeTemplate({
       </Helmet>
 
       <VStack>
-        <Heading>{title}</Heading>
+        {/* <Image
+          as={GatsbyImage}
+          fluid={image.sharp.fluid}
+          w={{ base: "100%", md: "64" }}
+          minH="50%"
+          maxH="90vw"
+        /> */}
+        <Heading fontFamily="'aleo', 'Courier New', Courier, monospace">
+          {title}
+        </Heading>
         <HStack isInline>
           <Tag size="md" variant="outline" colorScheme="red">
             <TagLeftIcon as={IoMdTime} mr={1} />
