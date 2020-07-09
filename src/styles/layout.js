@@ -2,7 +2,7 @@ import React from "react";
 import { css, Global } from "@emotion/core";
 import { Box } from "@chakra-ui/core";
 
-// TODO: Currently unused, exceot unnecessarily in recipe page.
+// TODO: Currently unused
 // Either use it later, or remove on project completion
 
 export default function Layout({ children }) {
