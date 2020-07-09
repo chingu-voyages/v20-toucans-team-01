@@ -15,12 +15,11 @@ export default function RecipePreview({
       {...props}
     >
       <Image
-        borderRadius="10%"
         as={GatsbyImage}
+        borderRadius="10%"
         fluid={image.sharp.fluid}
         alt={`Cooked ${title}`}
-        width="64"
-        height="64"
+        boxSize={64}
       />
     </Link>
   );
