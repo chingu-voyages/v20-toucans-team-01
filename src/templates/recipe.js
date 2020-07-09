@@ -43,13 +43,13 @@ export default function RecipeTemplate({
             <Heading>{title}</Heading>
             <HStack isInline>
               <Tag size="sm" variant="outline" colorScheme="red">
-                {type[0].toLowerCase() + type.substring(1)}
+                {type[0].toUpperCase() + type.substring(1)}
               </Tag>
               <Tag size="sm" colorScheme="gray">
-                {difficulty[0].toLowerCase() + difficulty.substring(1)}
+                {difficulty[0].toUpperCase() + difficulty.substring(1)}
               </Tag>
               <Tag size="sm" variant="solid" colorScheme="blue">
-                {category[0].toLowerCase() + category.substring(1)}
+                {category[0].toUpperCase() + category.substring(1)}
               </Tag>
             </HStack>
 
