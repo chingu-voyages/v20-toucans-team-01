@@ -11,7 +11,7 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
-const Nav = () => {
+const Nav = ({ isHome }) => {
   return (
     <Flex
       as="nav"
@@ -22,16 +22,18 @@ const Nav = () => {
       m="0 auto"
     >
       <Flex align="center" mr={5}>
-        <Heading
-          as="h1"
-          color="facebook.500"
-          size="lg"
-          fontWeight="700"
-          fontFamily='"roboto slab", monospace'
-          whiteSpace="nowrap"
-        >
-          toucan recipes
-        </Heading>
+        <GatsbyLink to={!isHome && "/"}>
+          <Heading
+            as="h1"
+            color="facebook.500"
+            size="lg"
+            fontWeight="700"
+            fontFamily='"roboto slab", monospace'
+            whiteSpace="nowrap"
+          >
+            toucan recipes
+          </Heading>
+        </GatsbyLink>
       </Flex>
 
       <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>

@@ -56,7 +56,7 @@ export default function App() {
         />
       </Helmet>
 
-      <Nav />
+      <Nav isHome />
 
       {/* Main Content */}
       <Box as="main">
