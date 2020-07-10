@@ -33,15 +33,17 @@ module.exports = {
         languages: [{ name: "en" }],
         fields: [
           { name: "title", store: true },
-          { name: "image", store: true },
           { name: "slug", store: true },
+          { name: "image", store: true },
+          { name: "excerpt", store: true },
           { name: "type" },
           { name: "difficulty", store: true },
         ],
         resolvers: {
           Mdx: {
             title: (node) => node.frontmatter.title,
-            image: (node) => node.frontmatter.image,
+            image: (node) => node.frontmatter.image.sharp.fluid.srcWebp,
+            excerpt: (node) => node.frontmatter.excerpt,
             slug: (node) => node.frontmatter.slug,
             type: (node) => node.frontmatter.type,
             difficulty: (node) => node.frontmatter.difficulty,

@@ -11,6 +11,7 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import { MdSearch } from "react-icons/md";
 
+
 const Nav = ({ isHome }) => {
   return (
     <Flex
@@ -36,7 +37,7 @@ const Nav = ({ isHome }) => {
         </GatsbyLink>
       </Flex>
 
-      <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
+      {/* <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
         <InputGroup>
           <InputLeftElement>
             <Icon as={MdSearch} name="search" color="gray.300" />
@@ -44,7 +45,7 @@ const Nav = ({ isHome }) => {
 
           <Input color="black" type="search" placeholder="Search" />
         </InputGroup>
-      </Stack>
+      </Stack> */}
     </Flex>
   );
 };
