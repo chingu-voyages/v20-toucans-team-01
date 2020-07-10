@@ -79,7 +79,7 @@ export default function App() {
           <Text textAlign="center">
             Eating breakfast for dinner? We won&apos;t judge!
           </Text>
-          <MealTypes getTypeHandler={getTypeHandler} />
+          <MealTypes getTypeHandler={getTypeHandler} type={type} />
 
           {/* Difficulty */}
           <Heading fontFamily="aleo, monospace">Difficulty</Heading>
@@ -87,9 +87,15 @@ export default function App() {
             Make choices based on your cooking skill
           </Text>
           <ButtonGroup>
-            <Button onClick={getDiffHandler("easy")}>Easy</Button>
-            <Button onClick={getDiffHandler("medium")}>Medium</Button>
-            <Button onClick={getDiffHandler("hard")}>Hard</Button>
+            {["easy", "medium", "hard"].map((btnDiff) => (
+              <Button
+                variant={difficulty == btnDiff ? "outline" : "solid"}
+                onClick={getDiffHandler(btnDiff)}
+                key={btnDiff}
+              >
+                {btnDiff[0].toUpperCase() + btnDiff.substring(1)}
+              </Button>
+            ))}
           </ButtonGroup>
 
           {/* Categories Section */}
@@ -104,11 +110,17 @@ export default function App() {
             flexWrap="wrap"
             justifyContent="center"
           >
-            <Button onClick={getCategHandler("american")}>American</Button>
-            <Button onClick={getCategHandler("greek")}>Greek</Button>
-            <Button onClick={getCategHandler("japanese")}>Japanese</Button>
-            <Button onClick={getCategHandler("european")}>European</Button>
-            <Button onClick={getCategHandler("korean")}>Korean</Button>
+            {["american", "greek", "japanese", "european", "korean"].map(
+              (btnCateg) => (
+                <Button
+                  variant={category == btnCateg ? "outline" : "solid"}
+                  onClick={getCategHandler(btnCateg)}
+                  key={btnCateg}
+                >
+                  {btnCateg[0].toUpperCase() + btnCateg.substring(1)}
+                </Button>
+              )
+            )}
           </ButtonGroup>
 
           <SimpleGrid spacing={10} columns={{ xs: 1, md: 2, lg: 3 }} mb={5}>

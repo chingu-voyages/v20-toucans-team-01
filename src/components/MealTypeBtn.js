@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "@chakra-ui/core";
 
-export default function MealTypeBtn({ children, fluid, ...props }) {
+export default function MealTypeBtn({ btnType, fluid, type, getTypeHandler }) {
+  const isCurSel = type == btnType;
   return (
     <Button
       display="flex"
@@ -11,16 +12,20 @@ export default function MealTypeBtn({ children, fluid, ...props }) {
       boxSize={{ base: "40vw", md: "20vw" }}
       maxW={64}
       maxH={64}
-      bg={`url("${fluid.srcWebp}") rgba(0, 0, 0, 0.4)`}
+      bg={
+        !isCurSel
+          ? `url("${fluid.srcWebp}") rgba(0, 0, 0, 0.4)`
+          : `url("${fluid.tracedSVG}")`
+      }
       bgBlendMode="multiply"
-      color="white"
+      color={!isCurSel ? "white" : "black"}
       fontFamily="aleo"
       fontSize={24}
       textShadow="rgba(0, 0, 0, 0.16) 0px 0.125rem 0.5rem"
       _hover={{ color: "black", background: `url("${fluid.tracedSVG}")` }}
-      {...props}
+      onClick={getTypeHandler(btnType)}
     >
-      {children}
+      {btnType[0].toUpperCase() + btnType.substring(1)}
     </Button>
   );
 }

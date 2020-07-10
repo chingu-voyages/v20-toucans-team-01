@@ -3,7 +3,7 @@ import { SimpleGrid } from "@chakra-ui/core";
 import MealTypeBtn from "./MealTypeBtn";
 import { useStaticQuery, graphql } from "gatsby";
 
-export default function MealTypes({ getTypeHandler }) {
+export default function MealTypes({ getTypeHandler, type }) {
   var images = useStaticQuery(graphql`
     fragment getImg on File {
       sharp: childImageSharp {
@@ -30,29 +30,29 @@ export default function MealTypes({ getTypeHandler }) {
   return (
     <SimpleGrid spacing={10} columns={{ xs: 2, md: 4 }} mb={5}>
       <MealTypeBtn
-        onClick={getTypeHandler("breakfast")}
+        getTypeHandler={getTypeHandler}
+        btnType="breakfast"
+        type={type}
         fluid={images.breakfastImg.sharp.fluid}
-      >
-        Breakfast
-      </MealTypeBtn>
+      />
       <MealTypeBtn
-        onClick={getTypeHandler("brunch")}
+        getTypeHandler={getTypeHandler}
+        btnType="brunch"
+        type={type}
         fluid={images.brunchImg.sharp.fluid}
-      >
-        Brunch
-      </MealTypeBtn>
+      />
       <MealTypeBtn
-        onClick={getTypeHandler("lunch")}
+        getTypeHandler={getTypeHandler}
+        btnType="lunch"
+        type={type}
         fluid={images.lunchImg.sharp.fluid}
-      >
-        Lunch
-      </MealTypeBtn>
+      />
       <MealTypeBtn
-        onClick={getTypeHandler("dinner")}
+        getTypeHandler={getTypeHandler}
+        btnType="dinner"
+        type={type}
         fluid={images.dinnerImg.sharp.fluid}
-      >
-        Dinner
-      </MealTypeBtn>
+      />
     </SimpleGrid>
   );
 }
