@@ -24,6 +24,7 @@ export default function App() {
   const featuredRecipe = "pancakes";
   var [difficulty, setDifficulty] = useState();
   var [category, setCategory] = useState();
+  const [type, setType] = useState();
 
   function getSelHandler(v, setV) {
     return function makeHandler(btnV) {
@@ -39,6 +40,7 @@ export default function App() {
 
   var getDiffHandler = getSelHandler(difficulty, setDifficulty);
   var getCategHandler = getSelHandler(category, setCategory);
+  var getTypeHandler = getSelHandler(type, setType);
 
   return (
     <React.StrictMode>
@@ -77,7 +79,7 @@ export default function App() {
           <Text textAlign="center">
             Eating breakfast for dinner? We won&apos;t judge!
           </Text>
-          <MealTypes />
+          <MealTypes getTypeHandler={getTypeHandler} />
 
           {/* Difficulty */}
           <Heading fontFamily="aleo, monospace">Difficulty</Heading>
@@ -114,6 +116,7 @@ export default function App() {
               <RecipePreview
                 display={
                   /*Show based on difficulty and category*/
+                  (!type || type == recipe.type.toLowerCase?.()) &&
                   (!difficulty ||
                     difficulty == recipe.difficulty.toLowerCase?.()) &&
                   (!category || recipe.category?.toLowerCase() == category)
