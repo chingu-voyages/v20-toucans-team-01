@@ -20,8 +20,14 @@ export default function RecipeLayout({ children }) {
           font-family: "aleo", "Courier New", Courier, monospace;
           font-size: 1.5rem;
           font-weight: 600;
+          margin-top: 1rem;
         }
-        max-width: 80vw;
+        a {
+          color: blueviolet;
+        }
+        max-width: 1280px;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
       `}
     >
       <Box>
