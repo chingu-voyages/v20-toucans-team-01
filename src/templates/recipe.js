@@ -53,7 +53,7 @@ export default function RecipeTemplate({
     <Box>
       <Nav />
       <Helmet>
-        <title>Cook {title} — Toucan Recipes</title>
+        <title>Cook {title} · Toucan Recipes</title>
       </Helmet>
 
       <VStack>
