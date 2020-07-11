@@ -1,7 +1,7 @@
 // Old at the bottom
 import React, { useState } from "react";
-import { useStaticQuery, Link, graphql } from "gatsby";
-import { Index } from "lunr";
+import { useStaticQuery, graphql } from "gatsby";
+import lunr, { Index } from "lunr";
 import SearchResults from "./search-results";
 import {
   Stack,
@@ -14,7 +14,6 @@ import { MdSearch } from "react-icons/md";
 
 export default function SearchWidget() {
   const [value, setValue] = useState("");
-  // results is now a state variable
   const [results, setResults] = useState([]);
   // Since it's not a page component, useStaticQuery for querying data
   // https://www.gatsbyjs.org/docs/use-static-query/
@@ -25,21 +24,53 @@ export default function SearchWidget() {
   `);
   const index = Index.load(LunrIndex.index);
   const { store } = LunrIndex;
+
   const handleChange = (e) => {
-    const query = e.target.value;
+    const query = e.target.value || "";
     setValue(query);
+    if (!query.length) {
+      setResults([]);
+    }
+    const keywords = query.trim().replace(/\*/g, "").toLowerCase().split(/\s+/);
+
+    if (keywords[keywords.length - 1].length < 2) {
+      return;
+    }
     try {
-      const search = index.search(query).map(({ ref }) => {
-        return {
-          slug: ref,
-          ...store[ref],
-        };
-      });
-      setResults(search);
+      let andSearch = [];
+      keywords
+        .filter((el) => el.length > 1)
+        .forEach((el, i) => {
+          // per-single-keyword results
+          const keywordSearch = index
+            .query(function (q) {
+              q.term(el, {
+                editDistance: el.length > 5 ? 1 : 0,
+              });
+              q.term(el, {
+                wildcard:
+                  lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+              });
+            })
+            .map(({ ref }) => {
+              return {
+                slug: ref,
+                ...store[ref],
+              };
+            });
+          andSearch =
+            i > 0
+              ? andSearch.filter((x) =>
+                  keywordSearch.some((el) => el.slug === x.slug)
+                )
+              : keywordSearch;
+        });
+      setResults(andSearch);
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <Stack spacing={4} w={{ base: "50%", md: "inherit" }} mr={6}>
       <InputGroup role="search">
@@ -54,7 +85,7 @@ export default function SearchWidget() {
           onChange={handleChange}
         />
       </InputGroup>
-      {value ? <SearchResults results={results} /> : ""}
+      {value.trim().length > 1 && <SearchResults results={results} />}
     </Stack>
   );
 }
