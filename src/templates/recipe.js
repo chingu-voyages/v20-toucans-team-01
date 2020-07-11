@@ -18,6 +18,7 @@ import {
 import { IoMdTime } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import { GiChefToque } from "react-icons/gi";
+// TODO: Set production recipes free!
 // TODO: Determine if indeed image won't be rendered on recipe pages
 import GatsbyImage from "gatsby-image";
 
