@@ -30,8 +30,7 @@ const createIndex = async (recipeNodes, type, cache) => {
   const store = {};
   // Iterate over all recipes
   for (const node of recipeNodes) {
-    const { slug } = node.frontmatter;
-    const title = node.frontmatter.title;
+    const { slug, title, difficulty } = node.frontmatter;
     const [html, excerpt] = await Promise.all([
       // MDX uses body as html, MDX html for RSS feeds
       type.getFields().body.resolve(node),
@@ -39,21 +38,25 @@ const createIndex = async (recipeNodes, type, cache) => {
     ]);
     // Once html is resolved, add a slug-title-content object to the documents array
     documents.push({
-      slug: node.frontmatter.slug,
-      title: node.frontmatter.title,
+      slug,
+      title,
       type: node.frontmatter.type,
-      difficulty: node.frontmatter.difficulty,
+      difficulty,
       content: striptags(html),
     });
     store[slug] = {
       title,
       excerpt,
+      type: node.frontmatter.type,
+      difficulty,
     };
   }
   const index = lunr(function () {
     this.ref("slug");
     this.field("title");
     this.field("excerpt");
+    this.field("type");
+    this.field("difficulty");
     for (const doc of documents) {
       this.add(doc);
     }

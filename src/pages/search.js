@@ -1,61 +1,58 @@
 // Old at the bottom
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { Index } from "lunr"
-import SearchForm from "../components/searchForm"
-import Layout from "../styles/layout"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { Index } from "lunr";
+import SearchForm from "../components/searchForm";
+import Layout from "../styles/layout";
 
 // We can access the results of the page GraphQL query via the data props
 const SearchPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.siteTitle
-  
+  const siteTitle = data.site.siteMetadata.siteTitle;
+
   // We can read what follows the ?q=here
   // URL SearchParams provides a native way to get URL params
   // location.search.slice(1) gets rid of the "?"
-  const params = new URLSearchParams(location.search.slice(1))
-  const q = params.get("q") || ""
-  
+  const params = new URLSearchParams(location.search.slice(1));
+  const q = params.get("q") || "";
+
   // LunrIndex is available via page query
-  const { store } = data.LunrIndex
+  const { store } = data.LunrIndex;
   // Lunr in action here
-  const index = Index.load(data.LunrIndex.index)
-  let results = []
-  try {
-    results = index.search(q).map(({ ref }) => {
-      // Map search results to an array of {slug, title, excerpt} objects
-      return {
-        slug: ref,
-        ...store[ref],
-      }
-    })
-  } catch (error) {
-    console.log(error)
-  }
+  const index = Index.load(data.LunrIndex.index);
+  let results = [];
+  results = index.search(q).map(({ ref }) => {
+    // Map search results to an array of {slug, title, excerpt} objects
+    return {
+      slug: ref,
+      ...store[ref],
+    };
+  });
+
   return (
     <Layout location={location} title={siteTitle}>
       {q ? <h1>Search results</h1> : <h1>What are you looking for?</h1>}
       <SearchForm initialQuery={q} />
       {results.length ? (
-        results.map(result => {
+        results.map(({ slug, title, type, difficulty, excerpt }) => {
           return (
-            <article key={result.slug}>
+            <article key={slug}>
               <h2>
-                <Link to={result.slug}>
-                  {result.title || result.slug}
+                <Link to={`/${type}/${difficulty}/${slug}`}>
+                  {title || slug}
                 </Link>
               </h2>
-              <p>{result.excerpt}</p>
+              <p>{excerpt}</p>
             </article>
-          )
+          );
         })
       ) : (
         <p>Nothing found.</p>
       )}
     </Layout>
-  )
-} 
+  );
+};
 
-export default SearchPage
+export default SearchPage;
 export const pageQuery = graphql`
   query {
     site {
@@ -65,15 +62,7 @@ export const pageQuery = graphql`
     }
     LunrIndex
   }
-`
-
-
-
-
-
-
-
-
+`;
 
 // import React, { useState, useEffect } from "react"
 // import { graphql } from 'gatsby'
