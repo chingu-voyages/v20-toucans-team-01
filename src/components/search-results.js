@@ -10,7 +10,8 @@ const SearchResults = ({ results }) => (
         position="absolute"
         zIndex={1}
         top={16}
-        maxW="17.5rem"
+        width={{ base: "50%", md: "17.5rem" }}
+        maxW={{ base: "50%" }}
         boxShadow="rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
         border="1px solid gray.500"
         borderRadius="0.25rem"
