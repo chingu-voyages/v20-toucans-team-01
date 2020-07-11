@@ -19,7 +19,7 @@ export default function MealTypeBtn({ btnType, fluid, type, getTypeHandler }) {
       }
       bgBlendMode="multiply"
       color={!isCurSel ? "white" : "black"}
-      fontFamily="aleo"
+      fontFamily="mono"
       fontSize={24}
       textShadow="rgba(0, 0, 0, 0.16) 0px 0.125rem 0.5rem"
       _hover={{ color: "black", background: `url("${fluid.tracedSVG}")` }}

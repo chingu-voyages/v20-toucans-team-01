@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Heading,
-  Flex,
-  InputGroup,
-  InputLeftElement,
-  Stack,
-  Input,
-  Icon,
-} from "@chakra-ui/core";
+import { Heading, Flex } from "@chakra-ui/core";
 import { Link as GatsbyLink } from "gatsby";
-import { MdSearch } from "react-icons/md";
-
+import SearchWidget from "./search-widget";
 
 const Nav = ({ isHome }) => {
   return (
@@ -18,11 +9,10 @@ const Nav = ({ isHome }) => {
       as="nav"
       align="center"
       justify="space-between"
-      padding="1.5rem"
       maxW="1280px"
-      m="0 auto"
+      m="1.5rem auto"
     >
-      <Flex align="center" mr={5}>
+      <Flex align="center" mr={5} ml={6}>
         <GatsbyLink to={!isHome && "/"}>
           <Heading
             as="h1"
@@ -37,6 +27,8 @@ const Nav = ({ isHome }) => {
         </GatsbyLink>
       </Flex>
 
+      <SearchWidget />
+      {/* TODO: Remove Below */}
       {/* <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
         <InputGroup>
           <InputLeftElement>

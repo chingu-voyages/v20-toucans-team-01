@@ -1,4 +1,4 @@
-// Old at the bottom
+// TODO: Old page, remove in favor of new search-widget once completed
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { Index } from "lunr";

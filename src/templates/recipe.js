@@ -64,10 +64,7 @@ export default function RecipeTemplate({
           minH="50%"
           maxH="90vw"
         /> */}
-        <Heading
-          paddingX={5}
-          fontFamily="'aleo', 'Courier New', Courier, monospace"
-        >
+        <Heading paddingX={5} fontFamily="mono">
           {title}
         </Heading>
         <HStack isInline>

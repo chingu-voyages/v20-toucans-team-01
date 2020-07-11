@@ -16,9 +16,10 @@ import {
 } from "@chakra-ui/core";
 import { css } from "@emotion/core";
 import MealTypes from "../components/meal-type-group";
+// TODO remove unnecessary if needed
 //import Difficulty from "../components/Difficulty";
 //import Mealtype from "../components/Mealtype";
-import SearchForm from "../components/searchForm"
+// import SearchForm from "../components/searchForm";
 
 export default function App() {
   const recipes = useRecipes();
@@ -58,14 +59,15 @@ export default function App() {
           href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 0 100 100"><text y=".9em" font-size="90">🥘</text></svg>'
         />
       </Helmet>
-      
+
       <Nav isHome />
-      <SearchForm />
+      {/* TODO: Remove later, replaced with new search */}
+      {/* <SearchForm /> */}
       {/* Main Content */}
       <Box as="main">
         {/* First Section*/}
         <VStack as="section" spacing={5}>
-          <Heading fontFamily="aleo, monospace">Featured</Heading>
+          <Heading fontFamily="mono">Featured</Heading>
           <Text textAlign="center">
             Feeling hungry? Enjoy this recipe, curated weekly by a chef lead!
           </Text>
@@ -76,14 +78,14 @@ export default function App() {
           />
 
           {/* Meal Type */}
-          <Heading fontFamily="aleo, monospace">Meal Type</Heading>
+          <Heading fontFamily="mono">Meal Type</Heading>
           <Text textAlign="center">
             Eating breakfast for dinner? We won&apos;t judge!
           </Text>
           <MealTypes getTypeHandler={getTypeHandler} type={type} />
 
           {/* Difficulty */}
-          <Heading fontFamily="aleo, monospace">Difficulty</Heading>
+          <Heading fontFamily="mono">Difficulty</Heading>
           <Text textAlign="center">
             Make choices based on your cooking skill
           </Text>
@@ -100,7 +102,7 @@ export default function App() {
           </ButtonGroup>
 
           {/* Categories Section */}
-          <Heading fontFamily="aleo, monospace">Categories</Heading>
+          <Heading fontFamily="mono">Categories</Heading>
           <ButtonGroup
             css={css`
               button {
