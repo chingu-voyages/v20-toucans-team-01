@@ -141,7 +141,7 @@ export default function App() {
       </Box>
 
       {/* Footer*/}
-      <Flex as="footer" justify="center" mt={4}>
+      <Flex as="footer" justify="center" marginY={4}>
         <Text>
           © 2020 Copyright{" "}
           <Link

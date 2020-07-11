@@ -97,7 +97,7 @@ export default function RecipeTemplate({
         </Link>
 
         {/* Footer*/}
-        <Flex as="footer" justify="center" mt={4}>
+        <Flex as="footer" justify="center" marginY={4}>
           <Text>
             © 2020 Copyright{" "}
             <Link
