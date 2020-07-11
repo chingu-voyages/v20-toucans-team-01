@@ -34,7 +34,7 @@ const createIndex = async (recipeNodes, type, cache) => {
     const [html, excerpt] = await Promise.all([
       // MDX uses body as html, MDX html for RSS feeds
       type.getFields().body.resolve(node),
-      type.getFields().excerpt.resolve(node, { pruneLength: 40 }),
+      type.getFields().excerpt.resolve(node, { pruneLength: 60 }),
     ]);
     // Once html is resolved, add a slug-title-content object to the documents array
     documents.push({

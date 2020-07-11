@@ -1,6 +1,14 @@
 import React from "react";
-import { Link } from "gatsby";
-import { Box, Heading, List, ListItem, Divider } from "@chakra-ui/core";
+import { Link as GatsbyLink } from "gatsby";
+import {
+  Box,
+  Heading,
+  List,
+  ListItem,
+  Divider,
+  Text,
+  Link,
+} from "@chakra-ui/core";
 
 const SearchResults = ({ results }) => (
   <>
@@ -24,11 +32,16 @@ const SearchResults = ({ results }) => (
             {results.length} {`recipe${results.length > 1 ? "s" : ""}`} found!
           </Heading>
           <Divider marginY={3} />
-          {results.map((result) => (
-            <ListItem key={result.slug} lineHeight={1.5}>
-              <Link to={`/${result.type}/${result.difficulty}/${result.slug}`}>
-                {result.title}
+          {results.map(({ slug, title, type, difficulty, excerpt }) => (
+            <ListItem key={slug} lineHeight={1.5}>
+              <Link
+                as={GatsbyLink}
+                to={`/${type}/${difficulty}/${slug}`}
+                fontWeight="semibold"
+              >
+                {title}
               </Link>
+              <Text fontSize="sm">{excerpt}</Text>
             </ListItem>
           ))}
         </List>
