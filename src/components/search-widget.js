@@ -1,4 +1,3 @@
-// Old at the bottom
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import lunr, { Index } from "lunr";

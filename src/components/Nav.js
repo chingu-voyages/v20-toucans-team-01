@@ -28,16 +28,6 @@ const Nav = ({ isHome }) => {
       </Flex>
 
       <SearchWidget />
-      {/* TODO: Remove Below */}
-      {/* <Stack spacing={4} w={{ base: "50%", md: "inherit" }}>
-        <InputGroup>
-          <InputLeftElement>
-            <Icon as={MdSearch} name="search" color="gray.300" />
-          </InputLeftElement>
-
-          <Input color="black" type="search" placeholder="Search" />
-        </InputGroup>
-      </Stack> */}
     </Flex>
   );
 };

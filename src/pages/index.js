@@ -16,10 +16,6 @@ import {
 } from "@chakra-ui/core";
 import { css } from "@emotion/core";
 import MealTypes from "../components/meal-type-group";
-// TODO remove unnecessary if needed
-//import Difficulty from "../components/Difficulty";
-//import Mealtype from "../components/Mealtype";
-// import SearchForm from "../components/searchForm";
 
 export default function App() {
   const recipes = useRecipes();
@@ -61,8 +57,6 @@ export default function App() {
       </Helmet>
 
       <Nav isHome />
-      {/* TODO: Remove later, replaced with new search */}
-      {/* <SearchForm /> */}
       {/* Main Content */}
       <Box as="main">
         {/* First Section*/}

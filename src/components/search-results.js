@@ -12,9 +12,10 @@ import {
 
 const SearchResults = ({ results }) => (
   <>
-    {!!results.length && (
+    {results.length && (
       <Box
         as="section"
+        aria-label="search results for all recipes"
         position="absolute"
         zIndex={1}
         top={16}
@@ -28,7 +29,12 @@ const SearchResults = ({ results }) => (
         p={5}
       >
         <List>
-          <Heading fontSize="lg" fontWeight="semibold" fontFamily="mono">
+          <Heading
+            aria-label="assertive"
+            fontSize="lg"
+            fontWeight="semibold"
+            fontFamily="mono"
+          >
             {results.length} {`recipe${results.length > 1 ? "s" : ""}`} found!
           </Heading>
           <Divider marginY={3} />
@@ -50,31 +56,3 @@ const SearchResults = ({ results }) => (
   </>
 );
 export default SearchResults;
-
-// TODO: Old. Only for reference, remove after completed
-// <section className="search-results" aria-label="Search results for all posts">
-//     {results.length && query && (
-//       <h2
-//         className="search-results-count"
-//         id="search-results-count"
-//         aria-live="assertive"
-//       >
-//         Found {results.length} posts on "{query}"
-//       </h2>
-//     )}
-//     {results.length && (
-//       <ol className="search-results-list">
-//         {results.map(({ title, image, url, type }) => (
-//           <li key={title}>
-//             <h3 className="search-results-list__heading">
-//               <a href={url} className="search-results-list__link">
-//                 {title}
-//               </a>
-//             </h3>
-//             <img src={image} alt="Recipe thumbnail" />
-//             <small>{type}</small>
-//           </li>
-//         ))}
-//       </ol>
-//     )}
-//   </section>
