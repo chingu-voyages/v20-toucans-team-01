@@ -11,32 +11,34 @@ import {
 } from "@chakra-ui/core";
 
 const SearchResults = ({ results }) => (
-  <>
-    {results.length && (
-      <Box
-        as="section"
-        aria-label="search results for all recipes"
-        position="absolute"
-        zIndex={1}
-        top={16}
-        width={{ base: "50%", md: "17.5rem" }}
-        maxW={{ base: "50%" }}
-        boxShadow="rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
-        border="solid gray.900"
-        borderWidth={1}
-        borderRadius="0.25rem"
-        bgColor="white"
-        p={5}
+  <Box
+    as="section"
+    aria-label="search results for all recipes"
+    position="absolute"
+    zIndex={1}
+    top={16}
+    width={{ base: "50%", md: "17.5rem" }}
+    maxW={{ base: "50%" }}
+    boxShadow="rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
+    border="solid gray.900"
+    borderWidth={1}
+    borderRadius="0.25rem"
+    bgColor="white"
+    p={5}
+  >
+    <List>
+      <Heading
+        aria-label="assertive"
+        fontSize="lg"
+        fontWeight="semibold"
+        fontFamily="mono"
       >
-        <List>
-          <Heading
-            aria-label="assertive"
-            fontSize="lg"
-            fontWeight="semibold"
-            fontFamily="mono"
-          >
-            {results.length} {`recipe${results.length > 1 ? "s" : ""}`} found!
-          </Heading>
+        {results.length
+          ? `${results.length} recipe${results.length > 1 ? "s" : ""} found!`
+          : "Sorry, nothing but us crickets! 🦗"}
+      </Heading>
+      {results.length && (
+        <>
           <Divider marginY={3} />
           {results.map(({ slug, title, type, difficulty, excerpt }) => (
             <ListItem key={slug} lineHeight={1.5}>
@@ -50,9 +52,9 @@ const SearchResults = ({ results }) => (
               <Text fontSize="sm">{excerpt}</Text>
             </ListItem>
           ))}
-        </List>
-      </Box>
-    )}
-  </>
+        </>
+      )}
+    </List>
+  </Box>
 );
 export default SearchResults;
