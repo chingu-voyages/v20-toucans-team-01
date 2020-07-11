@@ -26,10 +26,6 @@ export default function SearchWidget() {
   const index = Index.load(LunrIndex.index);
   const { store } = LunrIndex;
   const handleChange = (e) => {
-    if (!e.target.value) {
-      // Skip query if no input
-      return setValue(e.target.value);
-    }
     const query = e.target.value;
     setValue(query);
     try {
@@ -58,7 +54,7 @@ export default function SearchWidget() {
           onChange={handleChange}
         />
       </InputGroup>
-      <SearchResults results={results} />
+      {value ? <SearchResults results={results} /> : ""}
     </Stack>
   );
 }
