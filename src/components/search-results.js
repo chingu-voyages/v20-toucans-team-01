@@ -13,7 +13,8 @@ const SearchResults = ({ results }) => (
         width={{ base: "50%", md: "17.5rem" }}
         maxW={{ base: "50%" }}
         boxShadow="rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px"
-        border="1px solid gray.900"
+        border="solid gray.900"
+        borderWidth={1}
         borderRadius="0.25rem"
         bgColor="white"
         p={5}
