@@ -12,6 +12,8 @@ export default function MealTypeBtn({ btnType, fluid, type, getTypeHandler }) {
       boxSize={{ base: "40vw", md: "20vw" }}
       maxW={64}
       maxH={64}
+      border={isCurSel && "0.15rem solid"}
+      borderColor="gray.300"
       bg={
         !isCurSel
           ? `url("${fluid.srcWebp}") rgba(0, 0, 0, 0.4)`
