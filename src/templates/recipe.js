@@ -13,6 +13,8 @@ import {
   Tag,
   HStack,
   TagLeftIcon,
+  Flex,
+  Text,
   Image,
 } from "@chakra-ui/core";
 import { IoMdTime } from "react-icons/io";
@@ -90,9 +92,23 @@ export default function RecipeTemplate({
           </MDXProvider>
         </Box>
 
-        <Link as={GatsbyLink} to="/">
+        <Link as={GatsbyLink} to="/" fontWeight="semibold" mb={5}>
           &larr; back to home
         </Link>
+
+        {/* Footer*/}
+        <Flex as="footer" justify="center" mt={4}>
+          <Text>
+            © 2020 Copyright{" "}
+            <Link
+              isExternal
+              href="https://github.com/chingu-voyages/v20-toucans-team-01"
+              color="facebook.500"
+            >
+              Voyage 20 Toucans Team 01
+            </Link>
+          </Text>
+        </Flex>
       </VStack>
     </Box>
   );
