@@ -20,7 +20,7 @@ export default function Page404() {
         />
       </Helmet>
       <Nav />
-      <Center flexDirection="column">
+      <Center textAlign="center" flexDirection="column">
         <Heading>Oops. This page doesn&apos;t exist!</Heading>
         <Text>Try again with another page... Please?</Text>
       </Center>
