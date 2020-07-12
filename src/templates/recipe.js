@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, Link as GatsbyLink } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Helmet } from "react-helmet";
 import { MDXProvider } from "@mdx-js/react";
 import RecipeLayout from "../components/recipe-layout";
 import Nav from "../components/Nav";
@@ -13,13 +12,13 @@ import {
   Tag,
   HStack,
   TagLeftIcon,
-  Flex,
-  Text,
 } from "@chakra-ui/core";
 import { IoMdTime } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import { GiChefToque } from "react-icons/gi";
 import ImageContext from "../context/image-context";
+import Footer from "../components/footer";
+import Head from "../components/head";
 
 export const query = graphql`
   query($slug: String!) {
@@ -61,9 +60,8 @@ export default function RecipeTemplate({
   return (
     <Box>
       <Nav />
-      <Helmet>
-        <title>Cook {title} · Toucan Recipes</title>
-      </Helmet>
+
+      <Head title={`Cook ${title}`} />
 
       <VStack>
         <Heading paddingX={5} fontFamily="mono" textAlign="center">
@@ -98,19 +96,7 @@ export default function RecipeTemplate({
           &larr; back to home
         </Link>
 
-        {/* Footer*/}
-        <Flex as="footer" justify="center" marginY={4}>
-          <Text>
-            © 2020 Copyright{" "}
-            <Link
-              isExternal
-              href="https://github.com/chingu-voyages/v20-toucans-team-01"
-              color="facebook.500"
-            >
-              Voyage 20 Toucans Team 01
-            </Link>
-          </Text>
-        </Flex>
+        <Footer />
       </VStack>
     </Box>
   );
