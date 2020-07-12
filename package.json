@@ -1,7 +1,7 @@
 {
   "name": "v20-toucans-team-01",
   "version": "1.0.0",
-  "description": "",
+  "description": "A minimal recipe web app that helps you choose a meal from a gallery of recipes, built by a team of 🐦s using React & Gatsby!",
   "main": "n/a",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
