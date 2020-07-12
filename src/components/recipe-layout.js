@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box, Divider, Flex, Image } from "@chakra-ui/core";
+import { Box, Divider, Image } from "@chakra-ui/core";
 import GatsbyImage from "gatsby-image";
 import { css } from "@emotion/core";
 import ImageContext from "../context/image-context";
@@ -47,13 +47,14 @@ export default function RecipeLayout({ children }) {
         borderRadius={10}
         boxSize="320px"
         minW="320px"
-        mt={4}
+        mt={{ base: 4, md: 0 }}
+        mb={4}
       />
       <Box>
         <h2>Ingredients</h2>
         {children.slice(0, sliceIndex)}
       </Box>
-      <Divider marginY={5} />
+      <Divider marginY={5} sx={{ clear: "both" }} />
       <Box>
         <h2>Steps</h2>
         {children.slice(sliceIndex)}
