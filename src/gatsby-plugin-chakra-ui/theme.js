@@ -5,6 +5,6 @@ export default {
     ...theme.fonts,
     heading: '"Inter", sans-serif',
     body: '"Inter", sans-serif',
-    //mono: "Menlo, monospace",
+    mono: 'aleo, "roboto slab", "Courier New", Courier,  monospace',
   },
 };

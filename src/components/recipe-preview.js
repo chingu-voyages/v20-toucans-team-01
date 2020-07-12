@@ -1,22 +1,29 @@
 import React from "react";
 import { Link as GatsbyLink } from "gatsby";
-import { css } from "@emotion/core";
 import { Link, Image } from "@chakra-ui/core";
+import GatsbyImage from "gatsby-image";
 
-export default function RecipePreview({ recipe: { slug, title, image } }) {
+export default function RecipePreview({
+  recipe: { title, slug, type, difficulty, image },
+  ...props
+}) {
   return (
-    <Link as={GatsbyLink} to={slug} width="64" height="64" m="auto">
+    <Link
+      borderRadius={10}
+      as={GatsbyLink}
+      to={`${type}/${difficulty}/${slug}`}
+      {...props}
+    >
       <Image
-        css={css`
-          border-radius: 10%;
-        `}
-        src={
-          image ??
-          "https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-        }
+        as={GatsbyImage}
+        borderWidth={1}
+        borderStyle="solid"
+        borderColor="gray.300"
+        boxShadow="rgba(0,0,0,0.1) 0px 1px 3px 0px, rgba(0,0,0,0.06) 0px 1px 2px 0px"
+        borderRadius={10}
+        fluid={image.sharp.fluid}
         alt={`Cooked ${title}`}
-        width="64"
-        height="64"
+        boxSize={64}
       />
     </Link>
   );

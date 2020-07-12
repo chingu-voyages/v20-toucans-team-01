@@ -8,8 +8,16 @@ export default function useRecipes() {
           frontmatter {
             title
             slug
-            author
-            image
+            type
+            difficulty
+            category
+            image {
+              sharp: childImageSharp {
+                fluid(maxWidth: 256, maxHeight: 256) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
           excerpt
         }
@@ -18,10 +26,15 @@ export default function useRecipes() {
   `);
 
   return data.allMdx.nodes.map(
-    ({ frontmatter: { title, author, slug, image }, excerpt }) => ({
+    ({
+      frontmatter: { title, slug, type, difficulty, category, image },
+      excerpt,
+    }) => ({
       title,
-      author,
       slug,
+      type,
+      difficulty,
+      category,
       image,
       excerpt,
     })
