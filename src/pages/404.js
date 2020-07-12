@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Nav from "../components/Nav";
-import { Heading, Center, Text } from "@chakra-ui/core";
+import { Heading, Center, Text, Flex, Link } from "@chakra-ui/core";
 
 export default function Page404() {
   return (
@@ -22,8 +22,26 @@ export default function Page404() {
       <Nav />
       <Center textAlign="center" flexDirection="column">
         <Heading>Oops. This page doesn&apos;t exist!</Heading>
-        <Text>Try again with another page... Please?</Text>
+        <Text>
+          Try again with another page{" "}
+          <span role="img" aria-label="img">
+            🐱‍💻
+          </span>
+        </Text>
       </Center>
+      {/* Footer*/}
+      <Flex as="footer" justify="center" marginY={4}>
+        <Text>
+          © 2020 Copyright{" "}
+          <Link
+            isExternal
+            href="https://github.com/chingu-voyages/v20-toucans-team-01"
+            color="facebook.500"
+          >
+            Voyage 20 Toucans Team 01
+          </Link>
+        </Text>
+      </Flex>
     </React.StrictMode>
   );
 }
