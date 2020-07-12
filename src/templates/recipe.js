@@ -20,7 +20,6 @@ import { IoMdTime } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import { GiChefToque } from "react-icons/gi";
 import ImageContext from "../context/image-context";
-// TODO: Set production recipes free!
 
 export const query = graphql`
   query($slug: String!) {
