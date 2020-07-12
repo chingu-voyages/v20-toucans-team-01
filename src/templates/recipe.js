@@ -15,14 +15,12 @@ import {
   TagLeftIcon,
   Flex,
   Text,
-  Image,
 } from "@chakra-ui/core";
 import { IoMdTime } from "react-icons/io";
 import { FaFlag } from "react-icons/fa";
 import { GiChefToque } from "react-icons/gi";
+import ImageContext from "../context/image-context";
 // TODO: Set production recipes free!
-// TODO: Determine if indeed image won't be rendered on recipe pages
-import GatsbyImage from "gatsby-image";
 
 export const query = graphql`
   query($slug: String!) {
@@ -48,7 +46,15 @@ export const query = graphql`
 export default function RecipeTemplate({
   data: {
     mdx: {
-      frontmatter: { title, type, difficulty, category, image },
+      frontmatter: {
+        title,
+        type,
+        difficulty,
+        category,
+        image: {
+          sharp: { fluid },
+        },
+      },
       body,
     },
   },
@@ -61,14 +67,7 @@ export default function RecipeTemplate({
       </Helmet>
 
       <VStack>
-        {/* <Image
-          as={GatsbyImage}
-          fluid={image.sharp.fluid}
-          w={{ base: "100%", md: "64" }}
-          minH="50%"
-          maxH="90vw"
-        /> */}
-        <Heading paddingX={5} fontFamily="mono">
+        <Heading paddingX={5} fontFamily="mono" textAlign="center">
           {title}
         </Heading>
         <HStack isInline>
@@ -88,7 +87,11 @@ export default function RecipeTemplate({
 
         <Box mt={5}>
           <MDXProvider components={{ RecipeLayout }}>
-            <MDXRenderer>{body}</MDXRenderer>
+            <ImageContext.Provider
+              value={{ alt: `${title} recipe image`, fluid }}
+            >
+              <MDXRenderer>{body}</MDXRenderer>
+            </ImageContext.Provider>
           </MDXProvider>
         </Box>
 
