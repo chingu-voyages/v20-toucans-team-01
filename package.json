@@ -35,7 +35,7 @@
     "gatsby-plugin-mdx": "^1.2.25",
     "gatsby-plugin-netlify": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-sharp": "^2.6.19",
+    "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-source-filesystem": "^2.3.19",
     "gatsby-transformer-sharp": "^2.5.11",
     "graphql-type-json": "^0.3.2",
